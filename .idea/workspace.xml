@@ -1,12 +1,180 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6693fe55-73b5-4680-829e-bd125f192033" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/logo192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/logo512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/bg-home.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/jsonExamples/defaultLocation.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/weatherIcons/01-s.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/weatherIcons/02-s.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/weatherIcons/03-s.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/weatherIcons/04-s.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/weatherIcons/05-s.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/weatherIcons/06-s.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/weatherIcons/07-s.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/weatherIcons/08-s.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/weatherIcons/11-s.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/weatherIcons/12-s.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/weatherIcons/13-s.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/weatherIcons/14-s.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/weatherIcons/15-s.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/weatherIcons/16-s.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/weatherIcons/17-s.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/weatherIcons/18-s.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/weatherIcons/19-s.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/weatherIcons/20-s.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/weatherIcons/21-s.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/weatherIcons/22-s.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/weatherIcons/23-s.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/weatherIcons/24-s.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/weatherIcons/25-s.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/weatherIcons/26-s.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/weatherIcons/29-s.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/weatherIcons/30-s.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/weatherIcons/31-s.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/weatherIcons/32-s.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/weatherIcons/33-s.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/weatherIcons/34-s.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/weatherIcons/35-s.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/weatherIcons/36-s.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/weatherIcons/37-s.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/weatherIcons/38-s.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/weatherIcons/39-s.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/weatherIcons/40-s.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/weatherIcons/41-s.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/weatherIcons/42-s.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/weatherIcons/43-s.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/weatherIcons/44-s.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Common/FavoriteItem.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Common/FavoriteItem.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Common/Header.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Common/Header.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Common/Image.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Common/NextDays.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Common/NextDaysItem.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Common/TemperatureIndicator.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Common/TemperatureIndicator.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Navigation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Pages/Favorites.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Pages/Favorites.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Pages/Home.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Pages/Home.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Utils/urlFromIngId.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="daniel-shema-24-09-19" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="SCSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1RHWrrCYKCD7bla2gOMb7nzXjHv" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="C:/Program Files (x86)/Nodist" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/docs" />
+    <property name="list.type.of.created.stylesheet" value="SCSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2018.3.5\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\danie\WebstormProjects\daniel-shema-24-09-19\public\assets" />
+      <recent name="C:\Users\danie\WebstormProjects\daniel-shema-24-09-19\src\assets" />
+      <recent name="C:\Users\danie\WebstormProjects\daniel-shema-24-09-19\src\assets\img" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="npm.npm start">
+    <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
+      <method v="2" />
+    </configuration>
+    <configuration name="npm start" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6693fe55-73b5-4680-829e-bd125f192033" name="Default Changelist" comment="" />
+      <created>1569324704141</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1569324704141</updated>
+      <workItem from="1569324706541" duration="54464000" />
+      <workItem from="1569485984457" duration="25026000" />
+      <workItem from="1569571937735" duration="4301000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
