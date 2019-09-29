@@ -25,6 +25,7 @@ class TemperatureIndicator extends React.Component {
                 className={`primary mb-2 ${this.props.className}`}
                 icon={TemperatureIndicators[0]}
                 color={TemperatureIndicators[1]}
+                size={this.props.isHeadline ? '3x' : '1x'}
             />
         )
     }

@@ -1,7 +1,7 @@
 import React from 'react';
 import './Home.scss';
 import Header from "../Common/Header";
-import axios from "axios";
+// import axios from "axios";
 import NextDays from "../Common/NextDays";
 // import defaultLocation from '../../assets/jsonExamples/defaultLocation'
 
@@ -388,57 +388,57 @@ class Home extends React.Component {
         }
     }
 
-    componentDidMount() {
-        // this.fetchWeatherData()
-        //     .then(value => this.phraseWeatherData(value))
-        //     .catch(reason => Error(`Failed fetching data, reason: ${reason}`))
-        // this.fetchLocationKey()
-    }
-
-    fetchLocationKey = location => {
-        // const url = `http://dataservice.accuweather.com/currentconditions/v1/${location}`;
-
-        const apiKey = '9MpqiOaZsD1p9P11PloCiFHszwVAkUcT';
-        const url = `http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${apiKey}&q=${location}`;
-
-        axios.get(url)
-            .then(value => {
-                console.log('1Printed Value Received From axios one: '+value);
-                return value.key;
-            })
-            .catch(reason => {
-                console.log('2Catch Error: '+reason);
-                return '3Returned Error: '+reason;
-            });
-            // .finally(() => {});
-        // axios({
-        //     method: 'GET',
-        //
-        // }).
-
-        // return http://dataservice.accuweather.com/currentconditions/v1/{locationKey}
-    }
-
-    fetchWeatherData = () => {
-
-    }
-
-    phraseWeatherData = () => {
-
-    }
-
-    fetchNext5DaysDate = locationKey => {
-        const apiKey = `9MpqiOaZsD1p9P11PloCiFHszwVAkUcT`;
-        const metric = true;
-        const url = `http://dataservice.accuweather.com/forecasts/v1/daily/5day/${locationKey}?apikey=${apiKey}&metric=${metric}`;
-        // axios(url)
-        //     .then(value => )
-        //     .catch(reason => )
-    }
+    // componentDidMount() {
+    //     // this.fetchWeatherData()
+    //     //     .then(value => this.phraseWeatherData(value))
+    //     //     .catch(reason => Error(`Failed fetching data, reason: ${reason}`))
+    //     // this.fetchLocationKey()
+    // }
+    //
+    // fetchLocationKey = location => {
+    //     // const url = `http://dataservice.accuweather.com/currentconditions/v1/${location}`;
+    //
+    //     const apiKey = '9MpqiOaZsD1p9P11PloCiFHszwVAkUcT';
+    //     const url = `http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${apiKey}&q=${location}`;
+    //
+    //     axios.get(url)
+    //         .then(value => {
+    //             console.log('1Printed Value Received From axios one: '+value);
+    //             return value.key;
+    //         })
+    //         .catch(reason => {
+    //             console.log('2Catch Error: '+reason);
+    //             return '3Returned Error: '+reason;
+    //         });
+    //         // .finally(() => {});
+    //     // axios({
+    //     //     method: 'GET',
+    //     //
+    //     // }).
+    //
+    //     // return http://dataservice.accuweather.com/currentconditions/v1/{locationKey}
+    // }
+    //
+    // fetchWeatherData = () => {
+    //
+    // }
+    //
+    // phraseWeatherData = () => {
+    //
+    // }
+    //
+    // fetchNext5DaysDate = locationKey => {
+    //     const apiKey = `9MpqiOaZsD1p9P11PloCiFHszwVAkUcT`;
+    //     const metric = true;
+    //     const url = `http://dataservice.accuweather.com/forecasts/v1/daily/5day/${locationKey}?apikey=${apiKey}&metric=${metric}`;
+    //     // axios(url)
+    //     //     .then(value => )
+    //     //     .catch(reason => )
+    // }
 
     render() {
         return (
-            <div className={'home'}>
+            <div className={'jumbotron home'}>
                 <Header
                     // city={defaultLocation.MobileLink.substring((55-24), defaultLocation.MobileLink.)} // finish slicing name if needed
                     // city={JSON.stringify(defaultLocation)}
@@ -449,6 +449,7 @@ class Home extends React.Component {
                     // temperature={'25'}
                     city={'Tel-Aviv'}
                     // temperature={'25'}
+                    isCelsius={this.props.isCelsius}
                     {...defaultLocation[0]}
                 />
                 <NextDays {...next5DaysPrediction}/>
