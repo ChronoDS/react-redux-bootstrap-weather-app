@@ -1,3 +1,7 @@
+The Project is deployed using Github Pages at 
+[https://chronods.github.io/daniel-shema-24-09-19/](https://chronods.github.io/daniel-shema-24-09-19/).
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
