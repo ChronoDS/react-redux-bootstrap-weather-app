@@ -1,0 +1,12 @@
+.masthead {
+  background: url("./../../assets/img/tlv_1.jpg") center;
+}
+.masthead .city-info {
+  color: #fff;
+  background: #64a19d70;
+}
+.masthead .city-name {
+  border: 2px solid #fff;
+}
+
+/*# sourceMappingURL=Header.css.map */

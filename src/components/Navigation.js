@@ -1,7 +1,17 @@
 import React from 'react'
 import {Link} from "react-router-dom";
+import './Navigation.scss'
 
 class Navigation extends React.Component {
+
+    autoCompleteSearch = e => {
+        return ; // TODO return search response in a debounce fashion.
+    }
+
+    updateStageForSearch = e => {
+        // e.target.value
+        return ; // TODO update the main stage with weather of the requested city.
+    }
 
     render() {
         return (
@@ -26,10 +36,21 @@ class Navigation extends React.Component {
                                     <Link className="nav-link js-scroll-trigger" to="/favorites">Favorites</Link>
                                 </li>
                             </ul>
-                            <form className="form-inline mt-2 mt-md-0">
-                                <input className="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" />
+                            <form className="form-inline mt-2 mt-md-0 mr-2"
+                                  onChange={event => this.autoCompleteSearch(event)}
+                                  onSubmit={event => this.updateStageForSearch(event)}
+                            >
+                                <input className="form-control mr-sm-2" type="text" placeholder="Search a city.." aria-label="Search" />
                                 <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                             </form>
+                            <label className="switch">
+                                <input type="checkbox" />
+                                    <span className="slider round" />
+                            </label>
+                            <label className="switch">
+                                <input type="checkbox" />
+                                <span className="slider round"/>
+                            </label>
                         </div>
                     </div>
                 </nav>

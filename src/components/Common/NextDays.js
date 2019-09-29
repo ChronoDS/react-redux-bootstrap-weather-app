@@ -16,8 +16,7 @@ class NextDays extends React.Component {
     render() {
         return (
             <div className="container-fluid">
-                <h2> </h2>
-                <h2 className={'mx-auto my-0 text-uppercase'}>{this.props.Headline.Text}</h2>
+                <h3 className={'mx-auto my-4 pl-4 text-uppercase'}>{this.props.Headline.Text}</h3>
                 <div className="row justify-content-center">
                     {this.props.DailyForecasts.map((day, index) => {
                         return <NextDaysItem {...day} key={index} />

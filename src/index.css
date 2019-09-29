@@ -5,9 +5,19 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #B9E9FF;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
+/*
+'weather': {
+100: '#EEF9FF',
+200: '#D3F1FF',
+300: '#B9E9FF',
+400: '#85D8FF',
+500: '#50C7FF',
+600: '#48B3E6',
+700: '#307799',
+800: '#245A73',
+900: '#183C4D',
+},
+*/
