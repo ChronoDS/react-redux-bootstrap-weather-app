@@ -2,25 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6693fe55-73b5-4680-829e-bd125f192033" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/img/tlv_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Common/Header.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Navigation.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Navigation.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Navigation.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/logo192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/logo512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Common/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Common/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Common/Header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Common/Header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Common/NextDays.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Common/NextDays.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Pages/Favorites.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Pages/Favorites.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -109,7 +91,7 @@
       <updated>1569324704141</updated>
       <workItem from="1569324706541" duration="54464000" />
       <workItem from="1569485984457" duration="25026000" />
-      <workItem from="1569571937735" duration="19597000" />
+      <workItem from="1569571937735" duration="20357000" />
     </task>
     <task id="LOCAL‎00001" summary="Added logics, favs and home with next 5 days. also added docs for github pages.">
       <created>1569615664431</created>
@@ -117,7 +99,13 @@
       <option name="presentableId" value="LOCAL‎00001" />
       <updated>1569615664431</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL‎00002" summary="deployment mid-level progress hb.">
+      <created>1569747307728</created>
+      <option name="number" value="LOCAL‎00002" />
+      <option name="presentableId" value="LOCAL‎00002" />
+      <updated>1569747307728</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -139,6 +127,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Added logics, favs and home with next 5 days. also added docs for github pages." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added logics, favs and home with next 5 days. also added docs for github pages." />
+    <MESSAGE value="deployment mid-level progress hb." />
+    <option name="LAST_COMMIT_MESSAGE" value="deployment mid-level progress hb." />
   </component>
 </project>
