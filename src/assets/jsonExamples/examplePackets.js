@@ -195,100 +195,100 @@ export const next5DaysPrediction = {
   ]
 }
 
-export const favoriteLocations = [
-  {
-    "LocalObservationDateTime": "2019-09-24T13:20:00+03:00",
-    "EpochTime": 1569320400,
-    "WeatherText": "Sunny",
-    "WeatherIcon": 1,
-    "HasPrecipitation": false,
-    "PrecipitationType": null,
-    "IsDayTime": true,
-    "Temperature": {
-      "Metric": {
-        "Value": 29.5,
-        "Unit": "C",
-        "UnitType": 17
-      },
-      "Imperial": {
-        "Value": 85,
-        "Unit": "F",
-        "UnitType": 18
-      }
-    },
-    "MobileLink": "http://m.accuweather.com/en/il/tel-aviv-port/215793/current-weather/215793?lang=en-us",
-    "Link": "http://www.accuweather.com/en/il/tel-aviv-port/215793/current-weather/215793?lang=en-us"
-  },
-  {
-    "LocalObservationDateTime": "2019-09-24T13:20:00+03:00",
-    "EpochTime": 1569320400,
-    "WeatherText": "Sunny",
-    "WeatherIcon": 1,
-    "HasPrecipitation": false,
-    "PrecipitationType": null,
-    "IsDayTime": true,
-    "Temperature": {
-      "Metric": {
-        "Value": 41.5,
-        "Unit": "C",
-        "UnitType": 17
-      },
-      "Imperial": {
-        "Value": 85,
-        "Unit": "F",
-        "UnitType": 18
-      }
-    },
-    "MobileLink": "http://m.accuweather.com/en/il/eilat/215793/current-weather/215793?lang=en-us",
-    "Link": "http://www.accuweather.com/en/il/eilat/215793/current-weather/215793?lang=en-us"
-  },
-  {
-    "LocalObservationDateTime": "2019-09-24T13:20:00+03:00",
-    "EpochTime": 1569320400,
-    "WeatherText": "Sunny",
-    "WeatherIcon": 1,
-    "HasPrecipitation": false,
-    "PrecipitationType": null,
-    "IsDayTime": true,
-    "Temperature": {
-      "Metric": {
-        "Value": 24,
-        "Unit": "C",
-        "UnitType": 17
-      },
-      "Imperial": {
-        "Value": 85,
-        "Unit": "F",
-        "UnitType": 18
-      }
-    },
-    "MobileLink": "http://m.accuweather.com/en/il/tel-aviv-port/215793/current-weather/215793?lang=en-us",
-    "Link": "http://www.accuweather.com/en/il/tel-aviv-port/215793/current-weather/215793?lang=en-us"
-  },
-  {
-    "LocalObservationDateTime": "2019-09-24T13:20:00+03:00",
-    "EpochTime": 1569320400,
-    "WeatherText": "Sunny",
-    "WeatherIcon": 1,
-    "HasPrecipitation": false,
-    "PrecipitationType": null,
-    "IsDayTime": true,
-    "Temperature": {
-      "Metric": {
-        "Value": 29.5,
-        "Unit": "C",
-        "UnitType": 17
-      },
-      "Imperial": {
-        "Value": 85,
-        "Unit": "F",
-        "UnitType": 18
-      }
-    },
-    "MobileLink": "http://m.accuweather.com/en/il/tel-aviv-port/215793/current-weather/215793?lang=en-us",
-    "Link": "http://www.accuweather.com/en/il/tel-aviv-port/215793/current-weather/215793?lang=en-us"
-  }
-]
+// export const favoriteLocations = [
+//   {
+//     "LocalObservationDateTime": "2019-09-24T13:20:00+03:00",
+//     "EpochTime": 1569320400,
+//     "WeatherText": "Sunny",
+//     "WeatherIcon": 1,
+//     "HasPrecipitation": false,
+//     "PrecipitationType": null,
+//     "IsDayTime": true,
+//     "Temperature": {
+//       "Metric": {
+//         "Value": 29.5,
+//         "Unit": "C",
+//         "UnitType": 17
+//       },
+//       "Imperial": {
+//         "Value": 85,
+//         "Unit": "F",
+//         "UnitType": 18
+//       }
+//     },
+//     "MobileLink": "http://m.accuweather.com/en/il/tel-aviv-port/215793/current-weather/215793?lang=en-us",
+//     "Link": "http://www.accuweather.com/en/il/tel-aviv-port/215793/current-weather/215793?lang=en-us"
+//   },
+//   {
+//     "LocalObservationDateTime": "2019-09-24T13:20:00+03:00",
+//     "EpochTime": 1569320400,
+//     "WeatherText": "Sunny",
+//     "WeatherIcon": 1,
+//     "HasPrecipitation": false,
+//     "PrecipitationType": null,
+//     "IsDayTime": true,
+//     "Temperature": {
+//       "Metric": {
+//         "Value": 41.5,
+//         "Unit": "C",
+//         "UnitType": 17
+//       },
+//       "Imperial": {
+//         "Value": 85,
+//         "Unit": "F",
+//         "UnitType": 18
+//       }
+//     },
+//     "MobileLink": "http://m.accuweather.com/en/il/eilat/215793/current-weather/215793?lang=en-us",
+//     "Link": "http://www.accuweather.com/en/il/eilat/215793/current-weather/215793?lang=en-us"
+//   },
+//   {
+//     "LocalObservationDateTime": "2019-09-24T13:20:00+03:00",
+//     "EpochTime": 1569320400,
+//     "WeatherText": "Sunny",
+//     "WeatherIcon": 1,
+//     "HasPrecipitation": false,
+//     "PrecipitationType": null,
+//     "IsDayTime": true,
+//     "Temperature": {
+//       "Metric": {
+//         "Value": 24,
+//         "Unit": "C",
+//         "UnitType": 17
+//       },
+//       "Imperial": {
+//         "Value": 85,
+//         "Unit": "F",
+//         "UnitType": 18
+//       }
+//     },
+//     "MobileLink": "http://m.accuweather.com/en/il/tel-aviv-port/215793/current-weather/215793?lang=en-us",
+//     "Link": "http://www.accuweather.com/en/il/tel-aviv-port/215793/current-weather/215793?lang=en-us"
+//   },
+//   {
+//     "LocalObservationDateTime": "2019-09-24T13:20:00+03:00",
+//     "EpochTime": 1569320400,
+//     "WeatherText": "Sunny",
+//     "WeatherIcon": 1,
+//     "HasPrecipitation": false,
+//     "PrecipitationType": null,
+//     "IsDayTime": true,
+//     "Temperature": {
+//       "Metric": {
+//         "Value": 29.5,
+//         "Unit": "C",
+//         "UnitType": 17
+//       },
+//       "Imperial": {
+//         "Value": 85,
+//         "Unit": "F",
+//         "UnitType": 18
+//       }
+//     },
+//     "MobileLink": "http://m.accuweather.com/en/il/tel-aviv-port/215793/current-weather/215793?lang=en-us",
+//     "Link": "http://www.accuweather.com/en/il/tel-aviv-port/215793/current-weather/215793?lang=en-us"
+//   }
+// ]
 
 // const favoriteLocations = [
 //     {title: 'Tel-Aviv', temperature: '27', description: 'Sunny', image: ''},
@@ -302,88 +302,88 @@ export const favoriteLocations = [
 // ]
 
 
-const fuckem = {
-  "favorite": {
-  "id": 296,
-      "city": "Danielos",
-      "temperature": "25",
-      "WeatherText": "Smooth Operator",
-      "WeatherIcon": "5"
-},
-  "reducer": [
-  {
-    "LocalObservationDateTime": "2019-09-24T13:20:00+03:00",
-    "EpochTime": 1569320400,
-    "WeatherText": "Sunny",
-    "WeatherIcon": 1,
-    "HasPrecipitation": false,
-    "PrecipitationType": null,
-    "IsDayTime": true,
-    "Temperature": {
-      "Metric": {
-        "Value": 29.5,
-        "Unit": "C",
-        "UnitType": 17
-      },
-      "Imperial": {
-        "Value": 85,
-        "Unit": "F",
-        "UnitType": 18
-      }
-    },
-    "MobileLink": "http://m.accuweather.com/en/il/tel-aviv-port/215793/current-weather/215793?lang=en-us",
-    "Link": "http://www.accuweather.com/en/il/tel-aviv-port/215793/current-weather/215793?lang=en-us"
-  },
-  {
-    "LocalObservationDateTime": "2019-09-24T13:20:00+03:00",
-    "EpochTime": 1569320400,
-    "WeatherText": "Sunny",
-    "WeatherIcon": 1,
-    "HasPrecipitation": false,
-    "PrecipitationType": null,
-    "IsDayTime": true,
-    "Temperature": {
-      "Metric": {
-        "Value": 29.5,
-        "Unit": "C",
-        "UnitType": 17
-      },
-      "Imperial": {
-        "Value": 85,
-        "Unit": "F",
-        "UnitType": 18
-      }
-    },
-    "MobileLink": "http://m.accuweather.com/en/il/tel-aviv-port/215793/current-weather/215793?lang=en-us",
-    "Link": "http://www.accuweather.com/en/il/tel-aviv-port/215793/current-weather/215793?lang=en-us"
-  },
-  {
-    "id": 2906,
-    "city": "Danielia",
-    "temperature": "29",
-    "WeatherText": "Smooth Operator",
-    "WeatherIcon": "5"
-  },
-  {
-    "id": 2906,
-    "city": "Danielia",
-    "temperature": "29",
-    "WeatherText": "Smooth Operator",
-    "WeatherIcon": "5"
-  },
-  {
-    "id": 2906,
-    "city": "Danielia",
-    "temperature": "29",
-    "WeatherText": "Smooth Operator",
-    "WeatherIcon": "5"
-  },
-  {
-    "id": 296,
-    "city": "Danielos",
-    "temperature": "25",
-    "WeatherText": "Smooth Operator",
-    "WeatherIcon": "5"
-  }
-]
-}
+// const fuckem = {
+//   "favorite": {
+//   "id": 296,
+//       "city": "Danielos",
+//       "temperature": "25",
+//       "WeatherText": "Smooth Operator",
+//       "WeatherIcon": "5"
+// },
+//   "reducer": [
+//   {
+//     "LocalObservationDateTime": "2019-09-24T13:20:00+03:00",
+//     "EpochTime": 1569320400,
+//     "WeatherText": "Sunny",
+//     "WeatherIcon": 1,
+//     "HasPrecipitation": false,
+//     "PrecipitationType": null,
+//     "IsDayTime": true,
+//     "Temperature": {
+//       "Metric": {
+//         "Value": 29.5,
+//         "Unit": "C",
+//         "UnitType": 17
+//       },
+//       "Imperial": {
+//         "Value": 85,
+//         "Unit": "F",
+//         "UnitType": 18
+//       }
+//     },
+//     "MobileLink": "http://m.accuweather.com/en/il/tel-aviv-port/215793/current-weather/215793?lang=en-us",
+//     "Link": "http://www.accuweather.com/en/il/tel-aviv-port/215793/current-weather/215793?lang=en-us"
+//   },
+//   {
+//     "LocalObservationDateTime": "2019-09-24T13:20:00+03:00",
+//     "EpochTime": 1569320400,
+//     "WeatherText": "Sunny",
+//     "WeatherIcon": 1,
+//     "HasPrecipitation": false,
+//     "PrecipitationType": null,
+//     "IsDayTime": true,
+//     "Temperature": {
+//       "Metric": {
+//         "Value": 29.5,
+//         "Unit": "C",
+//         "UnitType": 17
+//       },
+//       "Imperial": {
+//         "Value": 85,
+//         "Unit": "F",
+//         "UnitType": 18
+//       }
+//     },
+//     "MobileLink": "http://m.accuweather.com/en/il/tel-aviv-port/215793/current-weather/215793?lang=en-us",
+//     "Link": "http://www.accuweather.com/en/il/tel-aviv-port/215793/current-weather/215793?lang=en-us"
+//   },
+//   {
+//     "id": 2906,
+//     "city": "Danielia",
+//     "temperature": "29",
+//     "WeatherText": "Smooth Operator",
+//     "WeatherIcon": "5"
+//   },
+//   {
+//     "id": 2906,
+//     "city": "Danielia",
+//     "temperature": "29",
+//     "WeatherText": "Smooth Operator",
+//     "WeatherIcon": "5"
+//   },
+//   {
+//     "id": 2906,
+//     "city": "Danielia",
+//     "temperature": "29",
+//     "WeatherText": "Smooth Operator",
+//     "WeatherIcon": "5"
+//   },
+//   {
+//     "id": 296,
+//     "city": "Danielos",
+//     "temperature": "25",
+//     "WeatherText": "Smooth Operator",
+//     "WeatherIcon": "5"
+//   }
+// ]
+// }

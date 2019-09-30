@@ -49,12 +49,17 @@ class Home extends React.Component {
     // }
 
     render() {
+        const {
+            defaultCityId,
+            defaultCity,
+            isCelsius
+        } = this.props;
         return (
             <div className={'jumbotron home'}>
                 <Header
-                    cityId={this.props.mainCityId}
-                    city={'Tel-Aviv'}
-                    isCelsius={this.props.isCelsius}
+                    cityId={defaultCityId}
+                    defaultCity={defaultCity}
+                    isCelsius={isCelsius}
                     {...defaultLocation[0]}
                 />
                 <NextDays {...next5DaysPrediction}/>
@@ -63,8 +68,10 @@ class Home extends React.Component {
     }
 }
 
-const mapStateToProps = state => {
-    return state;
-}
+const mapStateToProps = state => ({
+    defaultCityId: state.defaultCityId,
+    defaultCity: state.defaultCity,
+    isCelsius: state.isCelsius
+})
 
 export default connect(mapStateToProps)(Home);

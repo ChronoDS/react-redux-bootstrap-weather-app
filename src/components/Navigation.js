@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from "react-router-dom";
 import './Navigation.scss';
 // import {Typeahead} from 'react-bootstrap-typeahead';
-import {connect, Provider} from 'react-redux'
+import {connect} from 'react-redux'
 
 // const cities = [
 //     "Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua &amp; Barbuda",
@@ -37,36 +37,13 @@ import {connect, Provider} from 'react-redux'
 
 
 class Navigation extends React.Component {
-
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         isCelsius: true,
-    //         isLightTheme: true
-    //     }
-    // }
-
-    autoCompleteSearch = e => {
-        return ; // TODO return search response in a debounce fashion.
-    }
-
-    updateStageForSearch = e => {
-        // e.target.value
-        return ; // TODO update the main stage with weather of the requested city.
-    }
-
-
-
-
-    toggleTempType = () => {
-
-    }
-
-    toggleTheme = () => {
-        this.props.dispatch({type: 'TOGGLE_THEME'})
-    }
                                                                                     // py-1
     render() {
+        const {
+            isCelsius,
+            isLightTheme,
+            children
+        } = this.props;
         return (
             <div>
                 <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark" id="mainNav">
@@ -90,27 +67,25 @@ class Navigation extends React.Component {
                                           to="/favorites">Favorites</Link>
                                 </li>
                             </ul>
-
-                            {/*<div className="toggle-group">*/}
-                            {/*    <div className="custom-control custom-switch">*/}
-                            {/*        <input type="checkbox"*/}
-                            {/*               className="custom-control-input"*/}
-                            {/*               id="themeSwitch"*/}
-                            {/*               onChange={this.toggleTheme}*/}
-                            {/*               checked={this.props.isLightTheme}*/}
-                            {/*        />*/}
-                            {/*        <label*/}
-                            {/*            className="custom-control-label text-white pr-2"*/}
-                            {/*            for="themeSwitch">Light / Dark Theme</label>*/}
-                            {/*    </div>*/}
-                            {/*</div>*/}
                             <div className="toggle-group">
+                                <div className="custom-control custom-switch">
+                                    <input type="checkbox"
+                                           className="custom-control-input"
+                                           id="themeSwitch"
+                                           onChange={() => this.props.dispatch({type: 'TOGGLE_THEME'})}
+                                           checked={!isLightTheme}
+                                    />
+                                    <label
+                                        className="custom-control-label text-white pr-2"
+                                        htmlFor="themeSwitch"
+                                    >Light / Dark Theme</label>
+                                </div>
                                 <div className="custom-control custom-switch">
                                     <input type="checkbox"
                                            className="custom-control-input"
                                            id="temperatureSwitch"
                                            onChange={() => this.props.dispatch({type: 'TOGGLE_TEMP'})}
-                                           checked={!this.props.isCelsius}
+                                           checked={!isCelsius}
                                     />
                                     <label
                                         className="custom-control-label text-white pr-2"
@@ -136,14 +111,15 @@ class Navigation extends React.Component {
                         </div>
                     </div>
                 </nav>
-                {this.props.children}
+                {children}
             </div>
         )
     }
 }
 
-const mapStateToProps = state => {
-    return state;
-}
+const mapStateToProps = state => ({
+    isCelsius: state.isCelsius,
+    isLightTheme: state.isLightTheme
+})
 
 export default connect(mapStateToProps)(Navigation);

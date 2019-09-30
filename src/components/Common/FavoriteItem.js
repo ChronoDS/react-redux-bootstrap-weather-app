@@ -7,21 +7,27 @@ import {celsiusToFahrenheit} from "../Utils/baseUtils";
 
 class FavoriteItem extends React.Component {
     render() {
+        const {
+            isCelsius,
+            Temperature,
+            title,
+            WeatherText
+        } = this.props;
         return (
             <div className="col-md-4">
                 <div className="card mb-4 shadow-sm">
                     <div className="card-body text-center">
                         <FontAwesomeIcon icon="map-marked-alt" className="text-primary mb-2" />
-                        <h4 className="text-uppercase m-0">{this.props.title}</h4>
+                        <h4 className="text-uppercase m-0">{title}</h4>
                         <hr className="my-4" />
                         <TemperatureIndicator
-                            temperature={this.props.Temperature.Metric.Value}/>
+                            temperature={Temperature.Metric.Value}/>
                         <h5 className="temperature-content">
-                            { this.props.isCelsius ? this.props.Temperature.Metric.Value
-                                : celsiusToFahrenheit(this.props.Temperature.Metric.Value)
+                            { isCelsius ? Temperature.Metric.Value
+                                : celsiusToFahrenheit(Temperature.Metric.Value)
                             }&#176;
                         </h5>
-                        <div className="small text-black-50">{this.props.WeatherText}</div>
+                        <div className="small text-black-50">{WeatherText}</div>
 
                         <div className="d-flex justify-content-between align-items-center">
                             <div className="btn-group">

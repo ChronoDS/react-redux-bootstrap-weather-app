@@ -5,35 +5,44 @@ import {connect} from "react-redux";
 
 class NextDaysItem extends React.Component {
     render() {
+        const {
+            EpochDate,
+            key,
+            isCelsius,
+            Temperature,
+            Night,
+            Day,
+            Date
+        } = this.props;
         return (
             <div className="col-md-2">
                 <div className="card mb-4 shadow-sm">
                     <div className="card-body text-center">
-                        <h6 className="text-uppercase m-2">{getDayOfWeek(this.props.EpochDate, this.props.key)}</h6>
+                        <h6 className="text-uppercase m-2">{getDayOfWeek(EpochDate, key)}</h6>
                         <h4 className="text-uppercase m-0">
-                            { this.props.isCelsius ?
-                                `${this.props.Temperature.Minimum.Value}\xB0
-                                 - ${this.props.Temperature.Maximum.Value}\xB0`
-                                : `${celsiusToFahrenheit(this.props.Temperature.Minimum.Value)}\xB0
-                                 - ${celsiusToFahrenheit(this.props.Temperature.Maximum.Value)}\xB0`}
+                            {isCelsius ?
+                                `${Temperature.Minimum.Value}\xB0
+                                 - ${Temperature.Maximum.Value}\xB0`
+                                : `${celsiusToFahrenheit(Temperature.Minimum.Value)}\xB0
+                                 - ${celsiusToFahrenheit(Temperature.Maximum.Value)}\xB0`}
                         </h4>
                         <div className="d-flex justify-content-around">
                             <TemperatureIndicator
-                                temperature={this.props.Temperature.Minimum.Value}/>
+                                temperature={Temperature.Minimum.Value}/>
                             <TemperatureIndicator
-                                temperature={this.props.Temperature.Maximum.Value}/>
+                                temperature={Temperature.Maximum.Value}/>
                         </div>
                         <div className="d-flex justify-content-around">
-                            <img src={urlFromImgId(this.props.Night.Icon)}
+                            <img src={urlFromImgId(Night.Icon)}
                                  crossOrigin="anonymous"
-                                 alt={this.props.Day.IconPhrase} />
-                            <img src={urlFromImgId(this.props.Day.Icon)}
+                                 alt={Day.IconPhrase} />
+                            <img src={urlFromImgId(Day.Icon)}
                                  crossOrigin="anonymous"
-                                 alt={this.props.Night.IconPhrase} />
+                                 alt={Night.IconPhrase} />
                         </div>
                         <hr className="my-4" />
                         <p className="text-uppercase m-2 small">
-                            {dateFormatting(this.props.Date, this.props.key)}
+                            {dateFormatting(Date, key)}
                         </p>
                     </div>
                 </div>
@@ -43,8 +52,8 @@ class NextDaysItem extends React.Component {
     }
 }
 
-const mapStateToProps = state => {
-    return state;
-}
+const mapStateToProps = state => ({
+    isCelsius: state.isCelsius
+})
 
 export default connect(mapStateToProps)(NextDaysItem);

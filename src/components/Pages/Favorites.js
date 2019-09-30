@@ -2,7 +2,7 @@ import React from 'react'
 import './Favorites.scss'
 import FavoriteItem from "../Common/FavoriteItem";
 import {connect} from "react-redux";
-import {favoriteLocations} from '../../assets/jsonExamples/examplePackets'
+// import {favoriteLocations} from '../../assets/jsonExamples/examplePackets'
 
 class Favorites extends React.Component {
     render() {
@@ -11,19 +11,11 @@ class Favorites extends React.Component {
                 <section className="favorites-section py-4 bg-black">
                     <div className="container">
                         <div className="row">
-                            {/*{favoriteLocations.map((location, index) => {*/}
-                            {/*    return <FavoriteItem {...location}*/}
-                            {/*                         key={index}*/}
-                            {/*                         title={'name'}*/}
-
                             {this.props.favorites.map((location, index) => {
                                 return <FavoriteItem {...location}
                                     key={index}
                                     />
                             })}
-
-                            //     />
-                            // })}
                         </div>
                     </div>
                 </section>
@@ -32,8 +24,8 @@ class Favorites extends React.Component {
     }
 }
 
-const mapStateToProps = state => {
-    return state;
-}
+const mapStateToProps = state => ({
+    favorites: state.favorites
+})
 
 export default connect(mapStateToProps)(Favorites);
