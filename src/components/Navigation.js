@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from "react-router-dom";
 import './Navigation.scss';
 // import {Typeahead} from 'react-bootstrap-typeahead';
+import {connect, Provider} from 'react-redux'
 
 // const cities = [
 //     "Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua &amp; Barbuda",
@@ -37,13 +38,13 @@ import './Navigation.scss';
 
 class Navigation extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            isCelsius: true,
-            theme: 'light'
-        }
-    }
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //         isCelsius: true,
+    //         isLightTheme: true
+    //     }
+    // }
 
     autoCompleteSearch = e => {
         return ; // TODO return search response in a debounce fashion.
@@ -54,10 +55,19 @@ class Navigation extends React.Component {
         return ; // TODO update the main stage with weather of the requested city.
     }
 
-    updateTempType = e => {
-        const isCelsius = !this.isCelsius;
-        this.setState({isCelsius})
+
+
+
+    toggleTempType = () => {
+        this.props.dispatch({type: 'TOGGLE_TEMP'})
     }
+
+    toggleTheme = () => {
+        this.props.dispatch({type: 'TOGGLE_THEME'})
+    }
+
+
+
                                                                                     // py-1
     render() {
         return (
@@ -86,7 +96,11 @@ class Navigation extends React.Component {
 
                             <div className="toggle-group">
                                 <div className="custom-control custom-switch">
-                                    <input type="checkbox" className="custom-control-input" id="themeSwitch" />
+                                    <input type="checkbox"
+                                           className="custom-control-input"
+                                           id="themeSwitch"
+                                           onClick={this.toggleTheme}
+                                    />
                                     <label
                                         className="custom-control-label text-white pr-2"
                                         htmlFor="themeSwitch">Light / Dark Theme</label>
@@ -96,7 +110,7 @@ class Navigation extends React.Component {
                                     <input type="checkbox"
                                            className="custom-control-input"
                                            id="temperatureSwitch"
-                                           onClick={event => this.setState({isCelsius: !this.state.isCelsius})}
+                                           onClick={this.toggleTempType}
                                     />
                                     <label
                                         className="custom-control-label text-white pr-2"
@@ -128,4 +142,10 @@ class Navigation extends React.Component {
     }
 }
 
-export default Navigation;
+const mapStateToProps = (state) => ({
+    count: state.count,
+    isCelsius: true,
+    isLightTheme: true
+})
+
+export default connect(mapStateToProps)(Navigation);
