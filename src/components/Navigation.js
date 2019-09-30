@@ -59,15 +59,12 @@ class Navigation extends React.Component {
 
 
     toggleTempType = () => {
-        this.props.dispatch({type: 'TOGGLE_TEMP'})
+
     }
 
     toggleTheme = () => {
         this.props.dispatch({type: 'TOGGLE_THEME'})
     }
-
-
-
                                                                                     // py-1
     render() {
         return (
@@ -94,23 +91,26 @@ class Navigation extends React.Component {
                                 </li>
                             </ul>
 
+                            {/*<div className="toggle-group">*/}
+                            {/*    <div className="custom-control custom-switch">*/}
+                            {/*        <input type="checkbox"*/}
+                            {/*               className="custom-control-input"*/}
+                            {/*               id="themeSwitch"*/}
+                            {/*               onChange={this.toggleTheme}*/}
+                            {/*               checked={this.props.isLightTheme}*/}
+                            {/*        />*/}
+                            {/*        <label*/}
+                            {/*            className="custom-control-label text-white pr-2"*/}
+                            {/*            for="themeSwitch">Light / Dark Theme</label>*/}
+                            {/*    </div>*/}
+                            {/*</div>*/}
                             <div className="toggle-group">
                                 <div className="custom-control custom-switch">
                                     <input type="checkbox"
                                            className="custom-control-input"
-                                           id="themeSwitch"
-                                           onClick={this.toggleTheme}
-                                    />
-                                    <label
-                                        className="custom-control-label text-white pr-2"
-                                        htmlFor="themeSwitch">Light / Dark Theme</label>
-                                </div>
-
-                                <div className="custom-control custom-switch">
-                                    <input type="checkbox"
-                                           className="custom-control-input"
                                            id="temperatureSwitch"
-                                           onClick={this.toggleTempType}
+                                           onChange={() => this.props.dispatch({type: 'TOGGLE_TEMP'})}
+                                           checked={!this.props.isCelsius}
                                     />
                                     <label
                                         className="custom-control-label text-white pr-2"
@@ -142,10 +142,8 @@ class Navigation extends React.Component {
     }
 }
 
-const mapStateToProps = (state) => ({
-    count: state.count,
-    isCelsius: true,
-    isLightTheme: true
-})
+const mapStateToProps = state => {
+    return state;
+}
 
 export default connect(mapStateToProps)(Navigation);

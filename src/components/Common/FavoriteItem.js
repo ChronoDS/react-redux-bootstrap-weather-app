@@ -2,6 +2,8 @@ import React from 'react'
 import './FavoriteItem.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import TemperatureIndicator from "./TemperatureIndicator";
+import {connect} from "react-redux";
+import {celsiusToFahrenheit} from "../Utils/baseUtils";
 
 class FavoriteItem extends React.Component {
     render() {
@@ -14,7 +16,11 @@ class FavoriteItem extends React.Component {
                         <hr className="my-4" />
                         <TemperatureIndicator
                             temperature={this.props.Temperature.Metric.Value}/>
-                        <h5 className="temperature-content">{this.props.Temperature.Metric.Value}&#176;</h5>
+                        <h5 className="temperature-content">
+                            { this.props.isCelsius ? this.props.Temperature.Metric.Value
+                                : celsiusToFahrenheit(this.props.Temperature.Metric.Value)
+                            }&#176;
+                        </h5>
                         <div className="small text-black-50">{this.props.WeatherText}</div>
 
                         <div className="d-flex justify-content-between align-items-center">
@@ -33,5 +39,8 @@ class FavoriteItem extends React.Component {
         )
     }
 }
+const mapStateToProps = state => {
+    return state;
+}
 
-export default FavoriteItem;
+export default connect(mapStateToProps)(FavoriteItem);

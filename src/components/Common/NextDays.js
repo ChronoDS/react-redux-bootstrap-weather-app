@@ -1,18 +1,8 @@
 import React from 'react'
 import NextDaysItem from "./NextDaysItem";
+import {connect} from "react-redux";
 
 class NextDays extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            dateToday: ''
-        }
-    }
-
-    componentDidMount() {
-        // let date = new Date()
-    }
-
     render() {
         return (
             <div className="container-fluid">
@@ -27,4 +17,8 @@ class NextDays extends React.Component {
     }
 }
 
-export default NextDays;
+const mapStateToProps = state => {
+    return state;
+}
+
+export default connect(mapStateToProps)(NextDays);

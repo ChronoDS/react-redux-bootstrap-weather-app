@@ -2,14 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6693fe55-73b5-4680-829e-bd125f192033" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/Utils/baseUtils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Utils/localStorage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/jsonExamples/defaultLocation.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/jsonExamples/examplePackets.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Common/FavoriteItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Common/FavoriteItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Common/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Common/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Common/NextDays.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Common/NextDays.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Common/NextDaysItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Common/NextDaysItem.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Pages/Favorites.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Pages/Favorites.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Pages/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Pages/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Utils/urlFromIngId.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,8 +30,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="SCSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -99,6 +106,7 @@
       <workItem from="1569324706541" duration="54464000" />
       <workItem from="1569485984457" duration="25026000" />
       <workItem from="1569571937735" duration="53950000" />
+      <workItem from="1569841558633" duration="25525000" />
     </task>
     <task id="LOCAL‎00001" summary="Added logics, favs and home with next 5 days. also added docs for github pages.">
       <created>1569615664431</created>
@@ -118,7 +126,13 @@
       <option name="presentableId" value="LOCAL‎00003" />
       <updated>1569776424448</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL‎00004" summary="WIP - connecting redux. frequent backup protocol - m2 is fluctuating.">
+      <created>1569841736048</created>
+      <option name="number" value="LOCAL‎00004" />
+      <option name="presentableId" value="LOCAL‎00004" />
+      <updated>1569841736048</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -143,6 +157,7 @@
     <MESSAGE value="deployment mid-level progress hb." />
     <MESSAGE value="added temp and theme toggles, added states to relevant locations." />
     <MESSAGE value="added toggles for temp and theme. added states in relevant locations." />
-    <option name="LAST_COMMIT_MESSAGE" value="added toggles for temp and theme. added states in relevant locations." />
+    <MESSAGE value="WIP - connecting redux. frequent backup protocol - m2 is fluctuating." />
+    <option name="LAST_COMMIT_MESSAGE" value="WIP - connecting redux. frequent backup protocol - m2 is fluctuating." />
   </component>
 </project>

@@ -1,22 +1,19 @@
 import React from 'react'
 import './Header.scss'
 import TemperatureIndicator from "./TemperatureIndicator";
-import urlFromImgId from '../Utils/urlFromIngId'
+import {urlFromImgId, celsiusToFahrenheit} from '../Utils/baseUtils'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {connect} from "react-redux";
 
 class Header extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            weatherIcon: ''
-        }
-    }
-
-    celsiusToFahrenheit = deg => {
-        // T(°F) = T(°C) × 1.8 + 32
-        return ((deg * 1.8) + 32)
-    }
+    addToFavorites = (cityId, cityName) => {
+        this.props.dispatch({
+            type: 'ADD_FAVORITE',
+            cityId: cityId,
+            cityName: cityName
+        });
+    };
 
     render() {
         return (
@@ -24,7 +21,18 @@ class Header extends React.Component {
 
                 <div className="d-flex justify-content-start pl-lg-5">
                     <div className="btn-group pt-3">
-                        <button type="button" className="btn btn-lg btn-outline-secondary">
+                        <button type="button"
+                                className="btn btn-lg btn-outline-secondary"
+                                // onClick={ () => this.addToFavorites(this.props.cityId, this.props.city)}
+                            onClick={() => this.props.dispatch({
+                                type: 'ADD_FAVORITE',
+                                id: 1112,
+                                city: 'test-a',
+                                temperature: '-25',
+                                WeatherText: 'Smooth Testarator',
+                                WeatherIcon: '11'
+                            })}
+                        >
                             <FontAwesomeIcon icon="star" />
                         </button>
                         <button type="button" className="btn btn-lg btn-outline-secondary">
@@ -38,10 +46,11 @@ class Header extends React.Component {
                         <img src={urlFromImgId(this.props.WeatherIcon)}
                              crossOrigin="anonymous"
                              alt={this.props.WeatherText} />
-                        <h1 className="mx-auto my-0 text-uppercase text-white border city-info">{this.props.city}</h1>
+                        <h1 className="mx-auto my-0 text-uppercase text-white border city-info">
+                            {this.props.city}</h1>
                         <h2 className="text-white mx-auto mt-2 mb-5 city-info">
-                            { this.state.isCelsius ? this.props.Temperature.Metric.Value
-                            : this.celsiusToFahrenheit(this.props.Temperature.Metric.Value)
+                            { this.props.isCelsius ? this.props.Temperature.Metric.Value
+                                : celsiusToFahrenheit(this.props.Temperature.Metric.Value)
                             }&#176;
                         </h2>
                         <TemperatureIndicator
@@ -49,7 +58,8 @@ class Header extends React.Component {
                             color={"red"}
                             isHeadline={true}
                         />
-                        <h2 className="text-white mx-auto mt-2 mb-5 city-info">{this.props.WeatherText}</h2>
+                        <h2 className="text-white mx-auto mt-2 mb-5 city-info">
+                            {this.props.WeatherText}</h2>
                     </div>
                 </div>
             </header>
@@ -57,4 +67,8 @@ class Header extends React.Component {
     }
 }
 
-export default Header;
+const mapStateToProps = state => {
+    return state;
+}
+
+export default connect(mapStateToProps)(Header);

@@ -1,130 +1,29 @@
 import React from 'react'
 import './Favorites.scss'
 import FavoriteItem from "../Common/FavoriteItem";
+import {connect} from "react-redux";
+import {favoriteLocations} from '../../assets/jsonExamples/examplePackets'
 
-// const favoriteLocations = [
-//     {title: 'Tel-Aviv', temperature: '27', description: 'Sunny', image: ''},
-//     {title: 'Haifa', temperature: '21', description: 'Smoggy', image: ''},
-//     {title: 'Ariel', temperature: '16', description: 'Chilly', image: ''},
-//     {title: 'Jerusalem', temperature: '14', description: 'Getting Cold Out Here', image: ''},
-//     {title: 'Netanya', temperature: '23', description: 'Nice and Sunny', image: ''},
-//     {title: 'Eilat', temperature: '42', description: 'Hot!!', image: ''},
-//     {title: 'Be\'er-Sheva', temperature: '16', description: 'Chilly', image: ''},
-//     {title: 'Herzliya', temperature: '25', description: 'Nice and Sunny', image: ''}
-// ]
-
-const favoriteLocations = [
-    {
-        "LocalObservationDateTime": "2019-09-24T13:20:00+03:00",
-        "EpochTime": 1569320400,
-        "WeatherText": "Sunny",
-        "WeatherIcon": 1,
-        "HasPrecipitation": false,
-        "PrecipitationType": null,
-        "IsDayTime": true,
-        "Temperature": {
-            "Metric": {
-                "Value": 29.5,
-                "Unit": "C",
-                "UnitType": 17
-            },
-            "Imperial": {
-                "Value": 85,
-                "Unit": "F",
-                "UnitType": 18
-            }
-        },
-        "MobileLink": "http://m.accuweather.com/en/il/tel-aviv-port/215793/current-weather/215793?lang=en-us",
-        "Link": "http://www.accuweather.com/en/il/tel-aviv-port/215793/current-weather/215793?lang=en-us"
-    },
-    {
-        "LocalObservationDateTime": "2019-09-24T13:20:00+03:00",
-        "EpochTime": 1569320400,
-        "WeatherText": "Sunny",
-        "WeatherIcon": 1,
-        "HasPrecipitation": false,
-        "PrecipitationType": null,
-        "IsDayTime": true,
-        "Temperature": {
-            "Metric": {
-                "Value": 41.5,
-                "Unit": "C",
-                "UnitType": 17
-            },
-            "Imperial": {
-                "Value": 85,
-                "Unit": "F",
-                "UnitType": 18
-            }
-        },
-        "MobileLink": "http://m.accuweather.com/en/il/eilat/215793/current-weather/215793?lang=en-us",
-        "Link": "http://www.accuweather.com/en/il/eilat/215793/current-weather/215793?lang=en-us"
-    },
-    {
-        "LocalObservationDateTime": "2019-09-24T13:20:00+03:00",
-        "EpochTime": 1569320400,
-        "WeatherText": "Sunny",
-        "WeatherIcon": 1,
-        "HasPrecipitation": false,
-        "PrecipitationType": null,
-        "IsDayTime": true,
-        "Temperature": {
-            "Metric": {
-                "Value": 24,
-                "Unit": "C",
-                "UnitType": 17
-            },
-            "Imperial": {
-                "Value": 85,
-                "Unit": "F",
-                "UnitType": 18
-            }
-        },
-        "MobileLink": "http://m.accuweather.com/en/il/tel-aviv-port/215793/current-weather/215793?lang=en-us",
-        "Link": "http://www.accuweather.com/en/il/tel-aviv-port/215793/current-weather/215793?lang=en-us"
-    },
-    {
-        "LocalObservationDateTime": "2019-09-24T13:20:00+03:00",
-        "EpochTime": 1569320400,
-        "WeatherText": "Sunny",
-        "WeatherIcon": 1,
-        "HasPrecipitation": false,
-        "PrecipitationType": null,
-        "IsDayTime": true,
-        "Temperature": {
-            "Metric": {
-                "Value": 29.5,
-                "Unit": "C",
-                "UnitType": 17
-            },
-            "Imperial": {
-                "Value": 85,
-                "Unit": "F",
-                "UnitType": 18
-            }
-        },
-        "MobileLink": "http://m.accuweather.com/en/il/tel-aviv-port/215793/current-weather/215793?lang=en-us",
-        "Link": "http://www.accuweather.com/en/il/tel-aviv-port/215793/current-weather/215793?lang=en-us"
-    }
-]
-
-// extractTitleFromLink = location => {
-//     return location.Link.substring(location.Link.search("il")+2);
-// }
-
-class Favorites extends React.Component{
+class Favorites extends React.Component {
     render() {
         return (
             <div>
                 <section className="favorites-section py-4 bg-black">
                     <div className="container">
                         <div className="row">
-                            {favoriteLocations.map((location, index) => {
+                            {/*{favoriteLocations.map((location, index) => {*/}
+                            {/*    return <FavoriteItem {...location}*/}
+                            {/*                         key={index}*/}
+                            {/*                         title={'name'}*/}
+
+                            {this.props.favorites.map((location, index) => {
                                 return <FavoriteItem {...location}
-                                                     key={index}
-                                                     title={'name'}
-                                />
+                                    key={index}
+                                    />
                             })}
+
+                            //     />
+                            // })}
                         </div>
                     </div>
                 </section>
@@ -133,4 +32,8 @@ class Favorites extends React.Component{
     }
 }
 
-export default Favorites;
+const mapStateToProps = state => {
+    return state;
+}
+
+export default connect(mapStateToProps)(Favorites);
