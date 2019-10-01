@@ -6,33 +6,19 @@ import * as serviceWorker from './serviceWorker';
 import {Provider} from "react-redux";
 import {createStore} from "redux";
 import { loadState, saveState } from './components/Utils/localStorage';
-import {throttle} from 'lodash';
+import throttle from 'lodash/throttle';
 
 
 const initialState = {
     isCelsius: true,
     isLightTheme: true,
-    defaultCity: 'Tel-Aviv',
+    defaultCity: 'Bamba',
     defaultCityId: 215793,
+    defaultCityOriginCountry: 'Bambaloop',
+    currentlyDisplayedCity: '',
+    currentlyDisplayedCityId: '',
+    currentlyDisplayedCityOriginCountry: '',
     favorites: []
-}
-
-const favoriteReducer = (state = [], action) => {
-    switch (action.type) {
-        case 'ADD_FAVORITE':
-            return [
-                ...state,
-                {
-                    id: action.id,
-                    city: action.city,
-                    temperature: action.temperature,
-                    WeatherText: action.WeatherText,
-                    WeatherIcon: action.WeatherIcon
-                }
-            ]
-        default:
-            return state || [];
-    }
 }
 
 const reducer = (state = initialState, action) => {
@@ -49,47 +35,35 @@ const reducer = (state = initialState, action) => {
             console.log(state)
             return Object.assign({},
                 state,
-                {favorites: state.favorites.concat([{
+                {
+                    favorites: state.favorites.concat([{
                         id: action.id,
                         city: action.city,
                         temperature: action.temperature,
                         WeatherText: action.WeatherText,
                         WeatherIcon: action.WeatherIcon
-
-                    }])}
+                    }])
+                }
             );
-
-
-        // case 'UPDATE_FAVORITE':
-        //     return state.favorites.map(favorite => {
-        //             if (favorite.id !== action.id) {
-        //                 return favorite;
-        //             }
-        //             return {
-        //                 ...state,
-        //                 temperature: favorite.temperature,
-        //                 WeatherText: action.WeatherText,
-        //                 WeatherIcon: action.WeatherIcon
-        //             }
-        //         }
-        //     );
-        // case 'REMOVE_FAVORITE':
-        //     return [...state.favorites.slice(0, action.index),
-        //         ...state.favorites.slice(action.index + 1)
-        //     ];
+        case 'UPDATE_CURRENT_CITY_INFO':
+            return Object.assign({},
+                state,
+                {
+                    currentlyDisplayedCity: action.currentlyDisplayedCity,
+                    currentlyDisplayedCityId: action.currentlyDisplayedCityId
+                });
         default:
             return state || [];
     }
 }
 
-
 const persistedState = loadState();
 const store = createStore(
     reducer,
     persistedState,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    window.__REDUX_DEVTOOLS_EXTENSION__
+    && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
-
 
 store.subscribe(throttle(() => {
     saveState(store.getState());

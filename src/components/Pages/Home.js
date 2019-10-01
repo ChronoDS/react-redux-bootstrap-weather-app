@@ -1,44 +1,31 @@
 import React from 'react';
 import './Home.scss';
 import Header from "../Common/Header";
-// import axios from "axios";
 import NextDays from "../Common/NextDays";
 import {defaultLocation, next5DaysPrediction} from '../../assets/jsonExamples/examplePackets'
 import {connect} from "react-redux";
 
 class Home extends React.Component {
 
-    // componentDidMount() {
-    //     // this.fetchWeatherData()
-    //     //     .then(value => this.phraseWeatherData(value))
-    //     //     .catch(reason => Error(`Failed fetching data, reason: ${reason}`))
-    //     // this.fetchLocationKey()
-    // }
-    //
-    // fetchLocationKey = location => {
-    //     // const url = `http://dataservice.accuweather.com/currentconditions/v1/${location}`;
-    //
-    //     const apiKey = '9MpqiOaZsD1p9P11PloCiFHszwVAkUcT';
-    //     const url = `http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${apiKey}&q=${location}`;
-    //
-    //     axios.get(url)
-    //         .then(value => {
-    //             console.log('1Printed Value Received From axios one: '+value);
-    //             return value.key;
-    //         })
-    //         .catch(reason => {
-    //             console.log('2Catch Error: '+reason);
-    //             return '3Returned Error: '+reason;
-    //         });
-    //         // .finally(() => {});
-    //     // axios({
-    //     //     method: 'GET',
-    //     //
-    //     // }).
-    //
-    //     // return http://dataservice.accuweather.com/currentconditions/v1/{locationKey}
-    // }
-    //
+    componentDidMount() {
+        // this.requestLocationKey(this.props.defaultCity)
+        //     .then(value => {
+        //         console.log('The Current Location is: ', value.EnglishName,
+        //             ', SAVE TO STORE!!, its key is: ', value.key);
+        //         return value
+        //     })
+        //     .then(value => {
+        //         this.props.dispatch({
+        //             type: 'UPDATE_CURRENT_CITY_INFO',
+        //             currentlyDisplayedCity: value.EnglishName,
+        //             currentlyDisplayedCityId: value.key
+        //         })
+        //     })
+        //     .then(value => this.requestCurrentConditionsByKey(value))
+        //     .then()
+        //     .catch(reason => console.log(Error('Test with error: '+reason)))
+    }
+
     // fetchNext5DaysDate = locationKey => {
     //     const apiKey = `9MpqiOaZsD1p9P11PloCiFHszwVAkUcT`;
     //     const metric = true;

@@ -28,7 +28,8 @@ class Header extends React.Component {
             defaultCity,
             cityId,
             isCelsius,
-            Temperature
+            Temperature,
+            defaultCityOriginCountry
         } = this.props;
         return (
             <header className="masthead border-bottom">
@@ -55,6 +56,7 @@ class Header extends React.Component {
                 <div className="container d-flex h-100 align-items-center">
                     <div className="mx-auto text-center">
                         <h1 className="mx-auto my-0 text-uppercase text-white border city-info">{defaultCity}</h1>
+                        <p className="mx-auto my-0 text-white city-info">{defaultCityOriginCountry}</p>
                         <img src={urlFromImgId(WeatherIcon)}
                              crossOrigin="anonymous"
                              alt={WeatherText} />
@@ -78,7 +80,9 @@ class Header extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    favorites: state.favorites
+    favorites: state.favorites,
+    defaultCity: state.defaultCity,
+    defaultCityOriginCountry: state.defaultCityOriginCountry
 });
 
 export default connect(mapStateToProps)(Header);
