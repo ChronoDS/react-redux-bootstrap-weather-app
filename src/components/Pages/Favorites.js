@@ -2,7 +2,6 @@ import React from 'react'
 import './Favorites.scss'
 import FavoriteItem from "../Common/FavoriteItem";
 import {connect} from "react-redux";
-// import {favoriteLocations} from '../../assets/jsonExamples/examplePackets'
 
 class Favorites extends React.Component {
     render() {

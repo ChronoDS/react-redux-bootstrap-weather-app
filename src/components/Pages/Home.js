@@ -18,14 +18,14 @@ class Home extends React.Component {
                 return value[0]
             })
             .then(value => {
+                console.log('3. Location.data[0] value: ', value.key);
                 this.props.dispatch({
                     type: 'UPDATE_CURRENT_CITY_INFO',
                     City: value.EnglishName,
-                    CityId: value.key,
+                    CityId: value.Key,
                     OriginCountry: value.Country.EnglishName,
                 });
-                console.log('3. Location.data[0] value: ', value.key);
-                return value.key
+                return value.Key
             })
             .then(value => requestCurrentConditionsByKey(value))
             .then(value => value.data)

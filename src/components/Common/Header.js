@@ -1,24 +1,14 @@
-import React from 'react'
+import React from 'react';
+import {connect} from "react-redux";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import './Header.scss'
 import TemperatureIndicator from "./TemperatureIndicator";
-import {urlFromImgId, celsiusToFahrenheit} from '../Utils/baseUtils'
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {connect} from "react-redux";
+import {urlFromImgId, celsiusToFahrenheit} from '../Utils/baseUtils';
+import {addToFavorites, removeFromFavorites} from '../Utils/actionCreators';
+
+
 
 class Header extends React.Component {
-
-    addToFavorites = (cityId, city, originCountry,
-                      weatherText, weatherIcon, temperature) => {
-        return {
-            type: 'ADD_FAVORITE',
-            CityId: cityId,
-            City: city,
-            OriginCountry: originCountry,
-            Temperature: temperature,
-            WeatherText: weatherText,
-            WeatherIcon: weatherIcon
-        };
-    };
 
     render() {
         const {
@@ -38,7 +28,7 @@ class Header extends React.Component {
                                 className="btn btn-lg btn-outline-secondary"
                                 onClick={() => {
                                     this.props.dispatch(
-                                        this.addToFavorites(
+                                        addToFavorites(
                                             cityId,
                                             city,
                                             originCountry,
@@ -52,20 +42,11 @@ class Header extends React.Component {
                         </button>
                         <button type="button"
                                 className="btn btn-lg btn-outline-secondary"
-                                // onClick={() => {
-                                //     this.props.dispatch(
-                                //         this.addToFavorites(
-                                //             111111,
-                                //             "jakarta",
-                                //             'malbubua',
-                                //             'nice',
-                                //             2,
-                                //             '4000'
-                                //         )
-                                //     )
-                                // }}
+                                onClick={() => {
+                                    this.props.dispatch(removeFromFavorites(cityId))
+                                }}
                         >
-                            <FontAwesomeIcon icon="expand" />
+                            <FontAwesomeIcon icon="trash-alt" />
                         </button>
                     </div>
                 </div>

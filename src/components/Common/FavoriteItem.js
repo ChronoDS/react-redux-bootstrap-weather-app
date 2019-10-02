@@ -3,36 +3,48 @@ import './FavoriteItem.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import TemperatureIndicator from "./TemperatureIndicator";
 import {connect} from "react-redux";
-import {celsiusToFahrenheit} from "../Utils/baseUtils";
+import {celsiusToFahrenheit, urlFromImgId} from "../Utils/baseUtils";
+import {removeFromFavorites} from '../Utils/actionCreators';
 
 class FavoriteItem extends React.Component {
     render() {
         const {
             isCelsius,
+            CityId,
+            City,
+            OriginCountry,
             Temperature,
-            title,
-            WeatherText
+            WeatherText,
+            WeatherIcon
         } = this.props;
         return (
             <div className="col-md-4">
                 <div className="card mb-4 shadow-sm">
                     <div className="card-body text-center">
-                        <FontAwesomeIcon icon="map-marked-alt" className="text-primary mb-2" />
-                        <h4 className="text-uppercase m-0">{title}</h4>
+                        <img src={urlFromImgId(WeatherIcon)}
+                             crossOrigin="anonymous"
+                             alt={WeatherText} />
+                        <h4 className="text-uppercase m-0">{City}</h4>
+                        <p className="mx-auto my-0">{OriginCountry}</p>
                         <hr className="my-4" />
                         <TemperatureIndicator
-                            temperature={Temperature.Metric.Value}/>
+                            temperature={Temperature}/>
                         <h5 className="temperature-content">
-                            { isCelsius ? Temperature.Metric.Value
-                                : celsiusToFahrenheit(Temperature.Metric.Value)
+                            { isCelsius ? Temperature
+                                : celsiusToFahrenheit(Temperature)
                             }&#176;
                         </h5>
                         <div className="small text-black-50">{WeatherText}</div>
 
                         <div className="d-flex justify-content-between align-items-center">
                             <div className="btn-group">
-                                <button type="button" className="btn btn-sm btn-outline-secondary">
-                                    <FontAwesomeIcon icon="trash-alt" />
+                                <button
+                                    type="button"
+                                    className="btn btn-sm btn-outline-secondary"
+                                    onClick={() => this.props.dispatch(removeFromFavorites(CityId))}
+
+                                >
+                                    <FontAwesomeIcon icon="trash-alt"/>
                                 </button>
                                 <button type="button" className="btn btn-sm btn-outline-secondary">
                                     <FontAwesomeIcon icon="expand" />
@@ -45,8 +57,5 @@ class FavoriteItem extends React.Component {
         )
     }
 }
-const mapStateToProps = state => {
-    return state;
-}
 
-export default connect(mapStateToProps)(FavoriteItem);
+export default connect()(FavoriteItem);

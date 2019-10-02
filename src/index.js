@@ -14,6 +14,7 @@ const initialState = {
     isLightTheme: true,
     defaultCity: 'Tel Aviv',
     defaultCityId: 215854,
+    TTL: '',
     currentlyDisplayed: {
         City: 'cityT',
         CityId: 111999,
@@ -22,7 +23,40 @@ const initialState = {
         WeatherIcon: '5',
         Temperature: '5000'
     },
-    favorites: []
+    favorites: [
+        {
+            City: 'New York',
+            CityId: '159259',
+            OriginCountry: 'USA',
+            Temperature: 14,
+            WeatherText: 'Chilly',
+            WeatherIcon: '11'
+        },
+        {
+            City: 'Jakulugaba',
+            CityId: '158259',
+            OriginCountry: 'Jakika',
+            Temperature: 2500,
+            WeatherText: 'Hot!!',
+            WeatherIcon: '2'
+        },
+        {
+            City: 'New York',
+            CityId: '119259',
+            OriginCountry: 'USA',
+            Temperature: 14,
+            WeatherText: 'Chilly',
+            WeatherIcon: '11'
+        },
+        {
+            City: 'Jakulugaba',
+            CityId: '158559',
+            OriginCountry: 'Jakika',
+            Temperature: 2500,
+            WeatherText: 'Hot!!',
+            WeatherIcon: '2'
+        },
+    ]
 }
 
 const reducer = (state = initialState, action) => {
@@ -42,7 +76,6 @@ const reducer = (state = initialState, action) => {
                     favorites: [
                         ...state.favorites,
                         {
-                            id: action.CityId,
                             City: action.City,
                             CityId: action.CityId,
                             OriginCountry: action.OriginCountry,
@@ -51,6 +84,17 @@ const reducer = (state = initialState, action) => {
                             WeatherIcon: action.WeatherIcon
                         }
                     ]
+                }
+            );
+        case 'REMOVE_FAVORITE':
+            return Object.assign({},
+                state,
+                {
+                    favorites: state.favorites.filter(favorite => {
+                        if (favorite.CityId !== action.CityId) {
+                            return favorite
+                        }
+                    })
                 }
             );
         case 'UPDATE_CURRENT_CITY_INFO':
@@ -100,7 +144,7 @@ store.subscribe(throttle(() => {
 
 ReactDOM.render(
     <Provider store={store}>
-        {/*{localStorage.clear()}*/}
+        {localStorage.clear()}
         <App />
     </Provider>,
     document.getElementById('root'));

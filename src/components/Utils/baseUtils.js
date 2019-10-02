@@ -27,12 +27,6 @@ export const getDayOfWeek = (epochTime, id) => {
 export const dateFormatting = (rawDate, id) => {
     let date = rawDate.substring(0, rawDate.indexOf('T'));
     date = date.split("-").reverse().join("-");
-    // might change it to being stored in localStorage but i dont like it robust.
-    // this.props.dispatch({
-    //     type: 'DATE_SET',
-    //     index: id,
-    //     value: date
-    // })
     return date;
 };
 
