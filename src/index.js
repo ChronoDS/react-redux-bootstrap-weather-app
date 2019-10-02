@@ -12,12 +12,16 @@ import throttle from 'lodash/throttle';
 const initialState = {
     isCelsius: true,
     isLightTheme: true,
-    defaultCity: 'Bamba',
-    defaultCityId: 215793,
-    defaultCityOriginCountry: 'Bambaloop',
-    currentlyDisplayedCity: '',
-    currentlyDisplayedCityId: '',
-    currentlyDisplayedCityOriginCountry: '',
+    defaultCity: 'Tel Aviv',
+    defaultCityId: 215854,
+    currentlyDisplayed: {
+        City: 'cityT',
+        CityId: 111999,
+        OriginCountry: 'WhoTown',
+        WeatherText: 'Sun Gone Nuclear',
+        WeatherIcon: '5',
+        Temperature: '5000'
+    },
     favorites: []
 }
 
@@ -32,26 +36,51 @@ const reducer = (state = initialState, action) => {
                 state,
                 {isLightTheme: !state.isLightTheme});
         case 'ADD_FAVORITE':
-            console.log(state)
             return Object.assign({},
                 state,
                 {
-                    favorites: state.favorites.concat([{
-                        id: action.id,
-                        city: action.city,
-                        temperature: action.temperature,
-                        WeatherText: action.WeatherText,
-                        WeatherIcon: action.WeatherIcon
-                    }])
+                    favorites: [
+                        ...state.favorites,
+                        {
+                            id: action.CityId,
+                            City: action.City,
+                            CityId: action.CityId,
+                            OriginCountry: action.OriginCountry,
+                            Temperature: action.Temperature,
+                            WeatherText: action.WeatherText,
+                            WeatherIcon: action.WeatherIcon
+                        }
+                    ]
                 }
             );
         case 'UPDATE_CURRENT_CITY_INFO':
             return Object.assign({},
                 state,
                 {
-                    currentlyDisplayedCity: action.currentlyDisplayedCity,
-                    currentlyDisplayedCityId: action.currentlyDisplayedCityId
-                });
+                    currentlyDisplayed: Object.assign({},
+                        state.currentlyDisplayed,
+                        {
+                            City: action.City,
+                            CityId: action.CityId,
+                            OriginCountry: action.OriginCountry
+                        }
+                    )
+                }
+            );
+        case 'UPDATE_CURRENT_CITY_CONDITIONS':
+            return Object.assign({},
+                state,
+                {
+                    currentlyDisplayed: Object.assign({},
+                        state.currentlyDisplayed,
+                        {
+                            WeatherText: action.WeatherText,
+                            WeatherIcon: action.WeatherIcon,
+                            Temperature: action.Temperature
+                        }
+                    )
+                }
+            );
         default:
             return state || [];
     }

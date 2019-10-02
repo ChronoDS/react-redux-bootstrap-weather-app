@@ -387,3 +387,90 @@ export const next5DaysPrediction = {
 //   }
 // ]
 // }
+
+export const locationSearch =
+    [
+      {
+        "Version": 1,
+        "Key": "215854",
+        "Type": "City",
+        "Rank": 31,
+        "LocalizedName": "Tel Aviv",
+        "EnglishName": "Tel Aviv",
+        "PrimaryPostalCode": "",
+        "Region": {
+          "ID": "MEA",
+          "LocalizedName": "Middle East",
+          "EnglishName": "Middle East"
+        },
+        "Country": {
+          "ID": "IL",
+          "LocalizedName": "Israel",
+          "EnglishName": "Israel"
+        },
+        "AdministrativeArea": {
+          "ID": "TA",
+          "LocalizedName": "Tel Aviv",
+          "EnglishName": "Tel Aviv",
+          "Level": 1,
+          "LocalizedType": "District",
+          "EnglishType": "District",
+          "CountryID": "IL"
+        },
+        "TimeZone": {
+          "Code": "IDT",
+          "Name": "Asia/Jerusalem",
+          "GmtOffset": 3,
+          "IsDaylightSaving": true,
+          "NextOffsetChange": "2019-10-26T23:00:00Z"
+        },
+        "GeoPosition": {
+          "Latitude": 32.045,
+          "Longitude": 34.77,
+          "Elevation": {
+            "Metric": {
+              "Value": 34,
+              "Unit": "m",
+              "UnitType": 5
+            },
+            "Imperial": {
+              "Value": 111,
+              "Unit": "ft",
+              "UnitType": 0
+            }
+          }
+        },
+        "IsAlias": false,
+        "SupplementalAdminAreas": [],
+        "DataSets": [
+          "Alerts"
+        ]
+      }
+    ]
+
+export const currentCondition =
+    [
+      {
+        "LocalObservationDateTime": "2019-10-01T16:10:00+03:00",
+        "EpochTime": 1569935400,
+        "WeatherText": "Mostly sunny",
+        "WeatherIcon": 2,
+        "HasPrecipitation": false,
+        "PrecipitationType": null,
+        "IsDayTime": true,
+        "Temperature": {
+          "Metric": {
+            "Value": 28.3,
+            "Unit": "C",
+            "UnitType": 17
+          },
+          "Imperial": {
+            "Value": 83,
+            "Unit": "F",
+            "UnitType": 18
+          }
+        },
+        "MobileLink": "http://m.accuweather.com/en/il/tel-aviv/215854/current-weather/215854?lang=en-us",
+        "Link": "http://www.accuweather.com/en/il/tel-aviv/215854/current-weather/215854?lang=en-us"
+      }
+    ]

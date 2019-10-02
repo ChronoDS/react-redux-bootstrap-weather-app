@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6693fe55-73b5-4680-829e-bd125f192033" name="Default Changelist" comment="tweaked redux dispatches app-wide. frequent backup protocol - m2 is fluctuating.">
-      <change afterPath="$PROJECT_DIR$/src/components/Utils/actionCreators.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Utils/apiUtils.js" afterDir="false" />
+    <list default="true" id="6693fe55-73b5-4680-829e-bd125f192033" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/jsonExamples/examplePackets.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/jsonExamples/examplePackets.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Common/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Common/Header.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Pages/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Pages/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Utils/apiUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Utils/apiUtils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Utils/baseUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Utils/baseUtils.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -97,7 +98,8 @@
       <workItem from="1569324706541" duration="54464000" />
       <workItem from="1569485984457" duration="25026000" />
       <workItem from="1569571937735" duration="53950000" />
-      <workItem from="1569841558633" duration="46814000" />
+      <workItem from="1569841558633" duration="61165000" />
+      <workItem from="1570004249765" duration="9682000" />
     </task>
     <task id="LOCAL‎00001" summary="Added logics, favs and home with next 5 days. also added docs for github pages.">
       <created>1569615664431</created>
@@ -135,7 +137,13 @@
       <option name="presentableId" value="LOCAL‎00006" />
       <updated>1569884679951</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL‎00007" summary="adding actionCreators. WIP on axios requests. extending baseUtils, adding apiUtils. frequent backup protocol - m2 is fluctuating.">
+      <created>1569934504945</created>
+      <option name="number" value="LOCAL‎00007" />
+      <option name="presentableId" value="LOCAL‎00007" />
+      <updated>1569934504945</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -163,6 +171,7 @@
     <MESSAGE value="WIP - connecting redux. frequent backup protocol - m2 is fluctuating." />
     <MESSAGE value="implemented app-wide redux logic. refactoring of utility functions. frequent backup protocol - m2 is fluctuating." />
     <MESSAGE value="tweaked redux dispatches app-wide. frequent backup protocol - m2 is fluctuating." />
-    <option name="LAST_COMMIT_MESSAGE" value="tweaked redux dispatches app-wide. frequent backup protocol - m2 is fluctuating." />
+    <MESSAGE value="adding actionCreators. WIP on axios requests. extending baseUtils, adding apiUtils. frequent backup protocol - m2 is fluctuating." />
+    <option name="LAST_COMMIT_MESSAGE" value="adding actionCreators. WIP on axios requests. extending baseUtils, adding apiUtils. frequent backup protocol - m2 is fluctuating." />
   </component>
 </project>

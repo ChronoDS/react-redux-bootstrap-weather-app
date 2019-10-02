@@ -7,29 +7,28 @@ import {connect} from "react-redux";
 
 class Header extends React.Component {
 
-    addToFavorites = (cityId, cityName) => {
+    addToFavorites = (cityId, city, originCountry,
+                      weatherText, weatherIcon, temperature) => {
         return {
-            // type: 'ADD_FAVORITE',
-            // cityId: cityId,
-            // cityName: cityName
             type: 'ADD_FAVORITE',
-            id: cityId,
-            city: cityName,
-            temperature: '-25',
-            WeatherText: 'Smooth Testarator',
-            WeatherIcon: '11'
+            CityId: cityId,
+            City: city,
+            OriginCountry: originCountry,
+            Temperature: temperature,
+            WeatherText: weatherText,
+            WeatherIcon: weatherIcon
         };
     };
 
     render() {
         const {
-            WeatherText,
-            WeatherIcon,
-            defaultCity,
+            city,
             cityId,
+            originCountry,
             isCelsius,
-            Temperature,
-            defaultCityOriginCountry
+            weatherText,
+            weatherIcon,
+            temperature
         } = this.props;
         return (
             <header className="masthead border-bottom">
@@ -37,17 +36,35 @@ class Header extends React.Component {
                     <div className="btn-group pt-3">
                         <button type="button"
                                 className="btn btn-lg btn-outline-secondary"
-                                // onClick={ () => this.addToFavorites(this.props.cityId, this.props.city)}
-                            onClick={() => {
-                                this.props.dispatch(this.addToFavorites(1232, 'jabalia'))
-                            }}>
+                                onClick={() => {
+                                    this.props.dispatch(
+                                        this.addToFavorites(
+                                            cityId,
+                                            city,
+                                            originCountry,
+                                            weatherText,
+                                            weatherIcon,
+                                            temperature
+                                        )
+                                    )
+                                }}>
                             <FontAwesomeIcon icon="star" />
                         </button>
                         <button type="button"
                                 className="btn btn-lg btn-outline-secondary"
-                                onClick={() => {
-                                    this.props.dispatch(this.addToFavorites(cityId + 2, defaultCity))
-                                }}>
+                                // onClick={() => {
+                                //     this.props.dispatch(
+                                //         this.addToFavorites(
+                                //             111111,
+                                //             "jakarta",
+                                //             'malbubua',
+                                //             'nice',
+                                //             2,
+                                //             '4000'
+                                //         )
+                                //     )
+                                // }}
+                        >
                             <FontAwesomeIcon icon="expand" />
                         </button>
                     </div>
@@ -55,23 +72,23 @@ class Header extends React.Component {
 
                 <div className="container d-flex h-100 align-items-center">
                     <div className="mx-auto text-center">
-                        <h1 className="mx-auto my-0 text-uppercase text-white border city-info">{defaultCity}</h1>
-                        <p className="mx-auto my-0 text-white city-info">{defaultCityOriginCountry}</p>
-                        <img src={urlFromImgId(WeatherIcon)}
+                        <h1 className="mx-auto my-0 text-uppercase text-white border city-info">{city}</h1>
+                        <p className="mx-auto my-0 text-white city-info">{originCountry}</p>
+                        <img src={urlFromImgId(weatherIcon)}
                              crossOrigin="anonymous"
-                             alt={WeatherText} />
+                             alt={weatherText} />
                         <h2 className="text-white mx-auto mt-2 mb-5 city-info">
-                            {isCelsius ? Temperature.Metric.Value
-                                : celsiusToFahrenheit(Temperature.Metric.Value)
+                            {isCelsius ? temperature
+                                : celsiusToFahrenheit(temperature)
                             }&#176;
                         </h2>
                         <TemperatureIndicator
-                            temperature={Temperature.Metric.Value}
+                            temperature={temperature}
                             color={"red"}
                             isHeadline={true}
                         />
                         <h2 className="text-white mx-auto mt-2 mb-5 city-info">
-                            {WeatherText}</h2>
+                            {weatherText}</h2>
                     </div>
                 </div>
             </header>
@@ -79,10 +96,4 @@ class Header extends React.Component {
     }
 }
 
-const mapStateToProps = state => ({
-    favorites: state.favorites,
-    defaultCity: state.defaultCity,
-    defaultCityOriginCountry: state.defaultCityOriginCountry
-});
-
-export default connect(mapStateToProps)(Header);
+export default connect()(Header);

@@ -34,8 +34,9 @@ export const dateFormatting = (rawDate, id) => {
     //     value: date
     // })
     return date;
-}
+};
 
-// extractTitleFromLink = location => {
-//     return location.Link.substring(location.Link.search("il")+2);
-// }
+// TODO add case of empty string
+export const replaceSpacesInCityQuery = (cityName) => {
+    return encodeURIComponent(cityName.trim());
+};

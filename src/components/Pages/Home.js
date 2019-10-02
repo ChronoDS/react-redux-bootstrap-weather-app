@@ -2,53 +2,50 @@ import React from 'react';
 import './Home.scss';
 import Header from "../Common/Header";
 import NextDays from "../Common/NextDays";
-import {defaultLocation, next5DaysPrediction} from '../../assets/jsonExamples/examplePackets'
 import {connect} from "react-redux";
+import {next5DaysPrediction} from '../../assets/jsonExamples/examplePackets'
+import {requestLocationKey, requestCurrentConditionsByKey} from '../Utils/apiUtils'
 
 class Home extends React.Component {
-
     componentDidMount() {
-        // this.requestLocationKey(this.props.defaultCity)
-        //     .then(value => {
-        //         console.log('The Current Location is: ', value.EnglishName,
-        //             ', SAVE TO STORE!!, its key is: ', value.key);
-        //         return value
-        //     })
-        //     .then(value => {
-        //         this.props.dispatch({
-        //             type: 'UPDATE_CURRENT_CITY_INFO',
-        //             currentlyDisplayedCity: value.EnglishName,
-        //             currentlyDisplayedCityId: value.key
-        //         })
-        //     })
-        //     .then(value => this.requestCurrentConditionsByKey(value))
-        //     .then()
-        //     .catch(reason => console.log(Error('Test with error: '+reason)))
+        requestLocationKey(this.props.defaultCity)
+            .then(value => {
+                console.log('1. Location value: ', value);
+                return value.data
+            })
+            .then(value => {
+                console.log('2. Location.data value: ', value);
+                return value[0]
+            })
+            .then(value => {
+                this.props.dispatch({
+                    type: 'UPDATE_CURRENT_CITY_INFO',
+                    City: value.EnglishName,
+                    CityId: value.key,
+                    OriginCountry: value.Country.EnglishName,
+                });
+                console.log('3. Location.data[0] value: ', value.key);
+                return value.key
+            })
+            .then(value => requestCurrentConditionsByKey(value))
+            .then(value => value.data)
+            .then(value => value[0])
+            .then(value => {
+                this.props.dispatch({
+                    type: 'UPDATE_CURRENT_CITY_CONDITIONS',
+                    WeatherText: value.WeatherText,
+                    WeatherIcon: value.WeatherIcon,
+                    Temperature: value.Temperature.Metric.Value
+                });
+                return value
+            })
+            .catch(reason => console.log('requestCurrentConditions error: ',reason));
     }
 
-    // fetchNext5DaysDate = locationKey => {
-    //     const apiKey = `9MpqiOaZsD1p9P11PloCiFHszwVAkUcT`;
-    //     const metric = true;
-    //     const url = `http://dataservice.accuweather.com/forecasts/v1/daily/5day/${locationKey}?apikey=${apiKey}&metric=${metric}`;
-    //     // axios(url)
-    //     //     .then(value => )
-    //     //     .catch(reason => )
-    // }
-
     render() {
-        const {
-            defaultCityId,
-            defaultCity,
-            isCelsius
-        } = this.props;
         return (
             <div className={'jumbotron home'}>
-                <Header
-                    cityId={defaultCityId}
-                    defaultCity={defaultCity}
-                    isCelsius={isCelsius}
-                    {...defaultLocation[0]}
-                />
+                <Header {...this.props} />
                 <NextDays {...next5DaysPrediction}/>
             </div>
         )
@@ -56,9 +53,14 @@ class Home extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    defaultCityId: state.defaultCityId,
+    isCelsius: state.isCelsius,
     defaultCity: state.defaultCity,
-    isCelsius: state.isCelsius
+    city: state.currentlyDisplayed.City,
+    cityId: state.currentlyDisplayed.CityId,
+    originCountry: state.currentlyDisplayed.OriginCountry,
+    weatherText: state.currentlyDisplayed.WeatherText,
+    weatherIcon: state.currentlyDisplayed.WeatherIcon,
+    temperature: state.currentlyDisplayed.Temperature
 })
 
 export default connect(mapStateToProps)(Home);
