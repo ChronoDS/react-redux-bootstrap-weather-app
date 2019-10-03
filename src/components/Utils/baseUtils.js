@@ -1,6 +1,9 @@
 export const images = require.context('../../../public/images', true);
 
 export const urlFromImgId = (weatherImageNumber) => {
+    if (weatherImageNumber === undefined || weatherImageNumber.length === 0) {
+        return './01-s.png';
+    }
     return `./${weatherImageNumber > 9 ? weatherImageNumber
         : `0`+weatherImageNumber}-s.png`
 }

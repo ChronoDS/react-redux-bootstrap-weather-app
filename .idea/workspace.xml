@@ -2,51 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6693fe55-73b5-4680-829e-bd125f192033" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/images/01-s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/02-s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/03-s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/04-s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/05-s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/06-s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/07-s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/08-s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/11-s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/12-s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/13-s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/14-s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/15-s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/16-s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/17-s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/18-s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/19-s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/20-s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/21-s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/22-s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/23-s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/24-s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/25-s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/26-s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/29-s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/30-s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/31-s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/32-s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/33-s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/34-s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/35-s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/36-s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/37-s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/38-s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/39-s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/40-s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/41-s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/42-s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/43-s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/44-s.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Common/FavoriteItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Common/FavoriteItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Common/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Common/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Common/NextDaysItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Common/NextDaysItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Utils/apiUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Utils/apiUtils.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Utils/baseUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Utils/baseUtils.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -138,7 +94,7 @@
       <workItem from="1569485984457" duration="25026000" />
       <workItem from="1569571937735" duration="53950000" />
       <workItem from="1569841558633" duration="61165000" />
-      <workItem from="1570004249765" duration="61266000" />
+      <workItem from="1570004249765" duration="62017000" />
     </task>
     <task id="LOCAL‎00001" summary="Added logics, favs and home with next 5 days. also added docs for github pages.">
       <created>1569615664431</created>
@@ -218,7 +174,13 @@
       <option name="presentableId" value="LOCAL‎00013" />
       <updated>1570111527913</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL‎00014" summary="diverted img pulls to local public/images dir. frequent backup protocol - m2 is fluctuating.">
+      <created>1570113569584</created>
+      <option name="number" value="LOCAL‎00014" />
+      <option name="presentableId" value="LOCAL‎00014" />
+      <updated>1570113569584</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -253,6 +215,7 @@
     <MESSAGE value="fixed nesting keys access problem, refactored app-wide. frequent backup protocol - m2 is fluctuating." />
     <MESSAGE value="added heroko tunnel for CORS HTTPS bypass. frequent backup protocol - m2 is fluctuating." />
     <MESSAGE value="added heroko tunnel for img pulls. frequent backup protocol - m2 is fluctuating." />
-    <option name="LAST_COMMIT_MESSAGE" value="added heroko tunnel for img pulls. frequent backup protocol - m2 is fluctuating." />
+    <MESSAGE value="diverted img pulls to local public/images dir. frequent backup protocol - m2 is fluctuating." />
+    <option name="LAST_COMMIT_MESSAGE" value="diverted img pulls to local public/images dir. frequent backup protocol - m2 is fluctuating." />
   </component>
 </project>
