@@ -12,24 +12,20 @@ import throttle from 'lodash/throttle';
 const initialState = {
     isCelsius: true,
     isLightTheme: true,
-    defaultCity: 'Tel Aviv',
-    defaultCityId: 215854,
     IsDayTime: true,
+    currentlyDisplayedCity: 'Tel Aviv',
+    currentlyDisplayedCityId: 215854,
+    currentlyDisplayedOriginCountry: 'WhoTown',
+    currentlyDisplayedWeatherText: 'Sun Gone Nuclear',
+    currentlyDisplayedWeatherIcon: '5',
+    currentlyDisplayedTemperature: '5000',
+    currentlyDisplayedDailyForecasts: [],
     TTL: '', // if TTL < Today -> update, else no.
     isLoading: false,
     options: [],
-    currentlyDisplayed: {
-        City: 'cityT',
-        CityId: 215854,
-        OriginCountry: 'WhoTown',
-        WeatherText: 'Sun Gone Nuclear',
-        WeatherIcon: '5',
-        Temperature: '5000',
-        DailyForecasts: []
-    },
     favorites: [
         {
-            City: 'New York',
+            City: 'New JerTest',
             CityId: '159259',
             OriginCountry: 'USA',
             Temperature: 14,
@@ -37,7 +33,7 @@ const initialState = {
             WeatherIcon: '11'
         },
         {
-            City: 'Jakulugaba',
+            City: 'JakaTest',
             CityId: '158259',
             OriginCountry: 'Jakika',
             Temperature: 2500,
@@ -45,15 +41,15 @@ const initialState = {
             WeatherIcon: '2'
         },
         {
-            City: 'New York',
-            CityId: '119259',
+            City: 'New YorkaTest',
+            CityId: '119359',
             OriginCountry: 'USA',
             Temperature: 14,
             WeatherText: 'Chilly',
             WeatherIcon: '11'
         },
         {
-            City: 'Jakulugaba',
+            City: 'HaiJakaTest',
             CityId: '158559',
             OriginCountry: 'Jakika',
             Temperature: 2500,
@@ -120,63 +116,62 @@ const reducer = (state = initialState, action) => {
         case 'UPDATE_CURRENT_CITY_INFO':
             return {
                 ...state,
-                currentlyDisplayed: {
-                    ...state.currentlyDisplayed,
-                    City: action.City,
-                    CityId: action.CityId,
-                    OriginCountry: action.OriginCountry
-                }
+                currentlyDisplayedCity: action.City,
+                currentlyDisplayedCityId: action.CityId,
+                currentlyDisplayedOriginCountry: action.OriginCountry
             };
         case 'UPDATE_CURRENT_CITY_CONDITIONS':
             return {
                 ...state,
-                currentlyDisplayed: {
-                    ...state.currentlyDisplayed,
-                    WeatherText: action.WeatherText,
-                    WeatherIcon: action.WeatherIcon,
-                    Temperature: action.Temperature,
-                    IsDayTime: action.IsDayTime
-                }
+                currentlyDisplayedWeatherText: action.WeatherText,
+                currentlyDisplayedWeatherIcon: action.WeatherIcon,
+                currentlyDisplayedTemperature: action.Temperature,
+                IsDayTime: action.IsDayTime
             };
-        case 'UPDATE_CURRENTS_NEXT_5_DAYS':
-            const dayExists = state.favorites.find( ({ Date }) => Date === action.Date );
-            if (dayExists !== undefined) {
-                return {
-                    ...state,
-                    currentlyDisplayed: {
-                        ...state.currentlyDisplayed,
-                        DailyForecasts: state.currentlyDisplayed.DailyForecasts.map((value) => {
-                            if (value.Date === action.Date && value.CityId === action.CityId) {
-                                return {
-                                    ...value,
-                                    Temperature: action.Temperature,
-                                    DayIcon: action.Day,
-                                    NightIcon: action.Night
-                                }
-                            }
-                            return value;
-                        })
-                    }
-                }
-            }
+        case 'UPDATE_CURRENTS_WEEK_ENTIRELY':
             return {
                 ...state,
-                currentlyDisplayed: {
-                    ...state.currentlyDisplayed,
-                    DailyForecasts: [
-                        ...state.currentlyDisplayed.DailyForecasts
-                            .filter(day => day.CityId === action.CityId),
-                        {
-                            CityId: action.CityId,
-                            EpochDate: action.EpochDate,
-                            Date: action.Date,
-                            Temperature: action.Temperature,
-                            DayIcon: action.Day,
-                            NightIcon: action.Night
-                        }
-                    ]
-                }
+                currentlyDisplayedDailyForecasts: action.DailyForecasts
             };
+        // case 'UPDATE_CURRENTS_NEXT_5_DAYS':
+        //     const dayExists = state.favorites.find( ({ Date }) => Date === action.Date );
+        //     if (dayExists !== undefined) {
+        //         return {
+        //             ...state,
+        //             currentlyDisplayed: {
+        //                 ...state.currentlyDisplayed,
+        //                 DailyForecasts: state.currentlyDisplayed.DailyForecasts.map((value) => {
+        //                     if (value.Date === action.Date && value.CityId === action.CityId) {
+        //                         return {
+        //                             ...value,
+        //                             Temperature: action.Temperature,
+        //                             DayIcon: action.Day,
+        //                             NightIcon: action.Night
+        //                         }
+        //                     }
+        //                     return value;
+        //                 })
+        //             }
+        //         }
+        //     }
+        //     return {
+        //         ...state,
+        //         currentlyDisplayed: {
+        //             ...state.currentlyDisplayed,
+        //             DailyForecasts: [
+        //                 ...state.currentlyDisplayed.DailyForecasts
+        //                     .filter(day => day.CityId === action.CityId),
+        //                 {
+        //                     CityId: action.CityId,
+        //                     EpochDate: action.EpochDate,
+        //                     Date: action.Date,
+        //                     Temperature: action.Temperature,
+        //                     DayIcon: action.Day,
+        //                     NightIcon: action.Night
+        //                 }
+        //             ]
+        //         }
+        //     };
         default:
             return state || [];
     }

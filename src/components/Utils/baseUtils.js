@@ -29,8 +29,9 @@ export const dateFormatting = (rawDate, id) => {
     return date;
 };
 
-// TODO add case of empty string
 export const replaceSpacesInCityQuery = (cityName) => {
-    // if (cityName.isEmpty)
+    if (cityName === undefined || cityName.length === 0) {
+        return '';
+    }
     return encodeURIComponent(cityName.trim());
 };

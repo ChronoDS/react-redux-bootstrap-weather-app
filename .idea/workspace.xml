@@ -1,25 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6693fe55-73b5-4680-829e-bd125f192033" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/img/tlv_2.jpg" afterDir="false" />
+    <list default="true" id="6693fe55-73b5-4680-829e-bd125f192033" name="Default Changelist" comment="added autoComplete search, working app-wide. fully refactored reducer, spread oriented. refactored api requests. frequent backup protocol - m2 is fluctuating.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/jsonExamples/examplePackets.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/jsonExamples/examplePackets.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Common/FavoriteItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Common/FavoriteItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Common/Header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Common/Header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Common/Header.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Common/Header.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Common/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Common/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Common/Header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Common/Header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Common/NextDays.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Common/NextDays.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Common/NextDaysItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Common/NextDaysItem.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Pages/Favorites.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Pages/Favorites.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Pages/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Pages/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Utils/apiUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Utils/apiUtils.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Utils/baseUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Utils/baseUtils.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -110,7 +99,7 @@
       <workItem from="1569485984457" duration="25026000" />
       <workItem from="1569571937735" duration="53950000" />
       <workItem from="1569841558633" duration="61165000" />
-      <workItem from="1570004249765" duration="48966000" />
+      <workItem from="1570004249765" duration="56584000" />
     </task>
     <task id="LOCAL‎00001" summary="Added logics, favs and home with next 5 days. also added docs for github pages.">
       <created>1569615664431</created>
@@ -166,7 +155,13 @@
       <option name="presentableId" value="LOCAL‎00009" />
       <updated>1570020533218</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL‎00010" summary="added autoComplete search, working app-wide. fully refactored reducer, spread oriented. refactored api requests. frequent backup protocol - m2 is fluctuating.">
+      <created>1570097443495</created>
+      <option name="number" value="LOCAL‎00010" />
+      <option name="presentableId" value="LOCAL‎00010" />
+      <updated>1570097443495</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,6 +192,7 @@
     <MESSAGE value="adding actionCreators. WIP on axios requests. extending baseUtils, adding apiUtils. frequent backup protocol - m2 is fluctuating." />
     <MESSAGE value="addFavorite is working. Header now pulls live data.&#10;extended baseUtils, cleaned and tweaked apiUtils. &#10;WIP on axios requests. &#10;frequent backup protocol - m2 is fluctuating." />
     <MESSAGE value="add-rem Favorite refactored and is working app-wide. favorites page fully functioning. favoriteItem and header only get props from connected parents, no need for self connectivity by themselves. &#10;key and current locations axios requests works fully. &#10;frequent backup protocol - m2 is fluctuating." />
-    <option name="LAST_COMMIT_MESSAGE" value="add-rem Favorite refactored and is working app-wide. favorites page fully functioning. favoriteItem and header only get props from connected parents, no need for self connectivity by themselves. &#10;key and current locations axios requests works fully. &#10;frequent backup protocol - m2 is fluctuating." />
+    <MESSAGE value="added autoComplete search, working app-wide. fully refactored reducer, spread oriented. refactored api requests. frequent backup protocol - m2 is fluctuating." />
+    <option name="LAST_COMMIT_MESSAGE" value="added autoComplete search, working app-wide. fully refactored reducer, spread oriented. refactored api requests. frequent backup protocol - m2 is fluctuating." />
   </component>
 </project>

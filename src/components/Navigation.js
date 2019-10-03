@@ -1,10 +1,11 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-import {connect} from 'react-redux'
+import {connect} from 'react-redux';
+import {withRouter} from "react-router";
 import './Navigation.scss';
-import {AsyncTypeahead} from 'react-bootstrap-typeahead';
+import {AsyncTypeahead, Highlighter, } from 'react-bootstrap-typeahead';
 import 'react-bootstrap-typeahead/css/Typeahead.css';
-import {autoSearchQuery} from './Utils/apiUtils'
+import {autoSearchQuery, requestCurrentConditionsByKey, requestNext5DaysForecast} from './Utils/apiUtils'
 
 class Navigation extends React.Component {
 
@@ -24,6 +25,40 @@ class Navigation extends React.Component {
                 });
                 this.props.dispatch({type: 'SET_IS_LOADING', isLoading: false});
             })
+    };
+
+    handleSearchOptionSelection = selected => {
+        // TODO move dispatch to actionCreators.
+        this.props.dispatch({
+            type: 'UPDATE_CURRENT_CITY_INFO',
+            City: selected[0].LocalizedName,
+            CityId: selected[0].Key,
+            OriginCountry: selected[0].Country.LocalizedName,
+        })
+        requestCurrentConditionsByKey(selected[0].Key)
+            .then(value => {
+                // TODO move dispatch to actionCreators.
+                this.props.dispatch({
+                    type: 'UPDATE_CURRENT_CITY_CONDITIONS',
+                    WeatherText: value.WeatherText,
+                    WeatherIcon: value.WeatherIcon,
+                    Temperature: value.Temperature.Metric.Value,
+                    IsDayTime: value.IsDayTime
+                });
+                return value
+            })
+            .catch(reason => console.log('requestCurrentConditions error: ',reason));
+        requestNext5DaysForecast(selected[0].Key)
+                .then(value => {
+                    this.props.dispatch({
+                        type: 'UPDATE_CURRENTS_WEEK_ENTIRELY',
+                        DailyForecasts: value
+                    });
+                    return value
+                })
+                .catch(reason => console.log('request5DaysConditions error: ',reason));
+
+        this.typeahead.getInstance().clear()
     };
 
     render() {
@@ -88,11 +123,15 @@ class Navigation extends React.Component {
                                 labelKey="LocalizedName"
                                 minLength={3}
                                 onSearch={this._handleSearch}
+                                onChange={this.handleSearchOptionSelection}
                                 placeholder="Search for a city..."
                                 renderMenuItemChildren={(option, props) => (
-                                    option.LocalizedName
+                                    <Highlighter search={props.text}>
+                                        {option[props.labelKey]}
+                                    </Highlighter>
                                 )}
                                 options={this.props.options}
+                                ref={(typeahead) => this.typeahead = typeahead}
                             />
                         </div>
                     </div>
@@ -110,4 +149,6 @@ const mapStateToProps = state => ({
     options: state.options
 })
 
-export default connect(mapStateToProps)(Navigation);
+// export default connect(mapStateToProps)(Navigation);
+export default withRouter(connect(mapStateToProps)(Navigation))
+

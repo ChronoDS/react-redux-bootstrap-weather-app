@@ -8,7 +8,7 @@ import {requestLocationKey, requestCurrentConditionsByKey} from '../Utils/apiUti
 class Home extends React.Component {
     componentDidMount() {
         // TODO check TTL and not send a redundant request.
-        requestLocationKey(this.props.defaultCity)
+        requestLocationKey(this.props.city)
             .then(value => {
                 // TODO move dispatch to actionCreators.
                 this.props.dispatch({
@@ -47,14 +47,14 @@ class Home extends React.Component {
 const mapStateToProps = state => ({
     TTL: state.TTL,
     isCelsius: state.isCelsius,
-    defaultCity: state.defaultCity,
-    city: state.currentlyDisplayed.City,
-    cityId: state.currentlyDisplayed.CityId,
-    originCountry: state.currentlyDisplayed.OriginCountry,
-    weatherText: state.currentlyDisplayed.WeatherText,
-    weatherIcon: state.currentlyDisplayed.WeatherIcon,
-    temperature: state.currentlyDisplayed.Temperature,
-    DailyForecasts: state.currentlyDisplayed.DailyForecasts
+    city: state.currentlyDisplayedCity,
+    cityId: state.currentlyDisplayedCityId,
+    IsDayTime: state.IsDayTime,
+    originCountry: state.currentlyDisplayedOriginCountry,
+    weatherText: state.currentlyDisplayedWeatherText,
+    weatherIcon: state.currentlyDisplayedWeatherIcon,
+    temperature: state.currentlyDisplayedTemperature,
+    DailyForecasts: state.currentlyDisplayedDailyForecasts
 })
 
 export default connect(mapStateToProps)(Home);

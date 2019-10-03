@@ -8,6 +8,7 @@ import { fas } from '@fortawesome/free-solid-svg-icons'
 import Home from "./components/Pages/Home";
 import Favorites from "./components/Pages/Favorites";
 
+
 library.add(fab, fas);
 
 function App() {

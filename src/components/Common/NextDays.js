@@ -6,25 +6,16 @@ import {requestNext5DaysForecast} from "../Utils/apiUtils";
 class NextDays extends React.Component {
     componentDidMount() {
         requestNext5DaysForecast(this.props.cityId)
+            // TODO fix dispatch from nav example
             .then(value => {
-                value.map((day) => {
-                    this.props.dispatch(this.phraseData(day));
-                    return day;
+                this.props.dispatch({
+                    type: 'UPDATE_CURRENTS_WEEK_ENTIRELY',
+                    DailyForecasts: value
                 });
                 return value
             })
             .catch(reason => console.log('request5DaysConditions error: ',reason));
     }
-
-    // TODO move to actionCreators.
-    phraseData = day => ({
-        type: 'UPDATE_CURRENTS_NEXT_5_DAYS',
-        Date: day.Date,
-        EpochDate: day.EpochDate,
-        Temperature: day.Temperature,
-        Day: day.Day,
-        Night: day.Night
-    })
 
     render() {
         return (
@@ -44,9 +35,9 @@ class NextDays extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    cityId: state.currentlyDisplayed.CityId,
+    cityId: state.currentlyDisplayedCityId,
     isCelsius: state.isCelsius,
-    DailyForecasts: state.currentlyDisplayed.DailyForecasts
+    DailyForecasts: state.currentlyDisplayedDailyForecasts
 });
 
 export default connect(mapStateToProps)(NextDays);
