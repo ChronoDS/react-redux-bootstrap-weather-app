@@ -1,5 +1,5 @@
-import React from 'react'
-import './Favorites.scss'
+import React from 'react';
+import './Favorites.scss';
 import FavoriteItem from "../Common/FavoriteItem";
 import {connect} from "react-redux";
 
@@ -11,9 +11,11 @@ class Favorites extends React.Component {
                     <div className="container">
                         <div className="row">
                             {this.props.favorites.map((location, index) => {
-                                return <FavoriteItem {...location}
-                                    key={index}
-                                    />
+                                return <FavoriteItem
+                                    {...location}
+                                    isCelsius={this.props.isCelsius}
+                                    isLightTheme={this.props.isLightTheme}
+                                    key={index}/>
                             })}
                         </div>
                     </div>
@@ -24,7 +26,9 @@ class Favorites extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    favorites: state.favorites
-})
+    favorites: state.favorites,
+    isCelsius: state.isCelsius,
+    isLightTheme: state.isLightTheme
+});
 
 export default connect(mapStateToProps)(Favorites);

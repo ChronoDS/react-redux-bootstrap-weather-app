@@ -8,20 +8,24 @@ import {createStore} from "redux";
 import { loadState, saveState } from './components/Utils/localStorage';
 import throttle from 'lodash/throttle';
 
-
+// TODO move entire store and redux logic to dedicated locations.
 const initialState = {
     isCelsius: true,
     isLightTheme: true,
     defaultCity: 'Tel Aviv',
     defaultCityId: 215854,
-    TTL: '',
+    IsDayTime: true,
+    TTL: '', // if TTL < Today -> update, else no.
+    isLoading: false,
+    options: [],
     currentlyDisplayed: {
         City: 'cityT',
-        CityId: 111999,
+        CityId: 215854,
         OriginCountry: 'WhoTown',
         WeatherText: 'Sun Gone Nuclear',
         WeatherIcon: '5',
-        Temperature: '5000'
+        Temperature: '5000',
+        DailyForecasts: []
     },
     favorites: [
         {
@@ -62,69 +66,117 @@ const initialState = {
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case 'TOGGLE_TEMP':
-            return Object.assign({},
-                state,
-                {isCelsius: !state.isCelsius});
+            return { ...state, isCelsius: !state.isCelsius };
         case 'TOGGLE_THEME':
-            return Object.assign({},
-                state,
-                {isLightTheme: !state.isLightTheme});
+            return { ...state, isLightTheme: !state.isLightTheme};
+        case 'SET_IS_LOADING':
+            return { ...state, isLoading: action.isLoading};
+        case 'ADD_SEARCH_OPTIONS':
+            return {
+                ...state,
+                options: [
+                    ...state.options,
+                    ...action.options
+                ]
+            }
         case 'ADD_FAVORITE':
-            return Object.assign({},
-                state,
-                {
-                    favorites: [
-                        ...state.favorites,
+            const favoriteExists = state.favorites.find( ({ CityId }) => CityId === action.CityId );
+            if (favoriteExists !== undefined) {
+                return {
+                    ...state,
+                    favorites: state.favorites.map((value) => {
+                        if (value.CityId === action.CityId) {
+                            return {
+                                ...value,
+                                Temperature: action.Temperature,
+                                WeatherText: action.WeatherText,
+                                WeatherIcon: action.WeatherIcon
+                            }
+                        }
+                        return value;
+                    })
+                }
+            }
+            return {
+                ...state,
+                favorites: [
+                    ...state.favorites,
+                    {
+                        City: action.City,
+                        CityId: action.CityId,
+                        OriginCountry: action.OriginCountry,
+                        Temperature: action.Temperature,
+                        WeatherText: action.WeatherText,
+                        WeatherIcon: action.WeatherIcon
+                    }
+                ]
+            };
+        case 'REMOVE_FAVORITE':
+            return {
+                ...state,
+                favorites: state.favorites
+                    .filter(favorite => favorite.CityId !== action.CityId)
+            };
+        case 'UPDATE_CURRENT_CITY_INFO':
+            return {
+                ...state,
+                currentlyDisplayed: {
+                    ...state.currentlyDisplayed,
+                    City: action.City,
+                    CityId: action.CityId,
+                    OriginCountry: action.OriginCountry
+                }
+            };
+        case 'UPDATE_CURRENT_CITY_CONDITIONS':
+            return {
+                ...state,
+                currentlyDisplayed: {
+                    ...state.currentlyDisplayed,
+                    WeatherText: action.WeatherText,
+                    WeatherIcon: action.WeatherIcon,
+                    Temperature: action.Temperature,
+                    IsDayTime: action.IsDayTime
+                }
+            };
+        case 'UPDATE_CURRENTS_NEXT_5_DAYS':
+            const dayExists = state.favorites.find( ({ Date }) => Date === action.Date );
+            if (dayExists !== undefined) {
+                return {
+                    ...state,
+                    currentlyDisplayed: {
+                        ...state.currentlyDisplayed,
+                        DailyForecasts: state.currentlyDisplayed.DailyForecasts.map((value) => {
+                            if (value.Date === action.Date && value.CityId === action.CityId) {
+                                return {
+                                    ...value,
+                                    Temperature: action.Temperature,
+                                    DayIcon: action.Day,
+                                    NightIcon: action.Night
+                                }
+                            }
+                            return value;
+                        })
+                    }
+                }
+            }
+            return {
+                ...state,
+                currentlyDisplayed: {
+                    ...state.currentlyDisplayed,
+                    DailyForecasts: [
+                        ...state.currentlyDisplayed.DailyForecasts
+                            .filter(day => day.CityId === action.CityId),
                         {
-                            City: action.City,
                             CityId: action.CityId,
-                            OriginCountry: action.OriginCountry,
+                            EpochDate: action.EpochDate,
+                            Date: action.Date,
                             Temperature: action.Temperature,
-                            WeatherText: action.WeatherText,
-                            WeatherIcon: action.WeatherIcon
+                            DayIcon: action.Day,
+                            NightIcon: action.Night
                         }
                     ]
                 }
-            );
-        case 'REMOVE_FAVORITE':
-            return Object.assign({},
-                state,
-                {
-                    favorites: state.favorites.filter(favorite => {
-                        if (favorite.CityId !== action.CityId) {
-                            return favorite
-                        }
-                    })
-                }
-            );
-        case 'UPDATE_CURRENT_CITY_INFO':
-            return Object.assign({},
-                state,
-                {
-                    currentlyDisplayed: Object.assign({},
-                        state.currentlyDisplayed,
-                        {
-                            City: action.City,
-                            CityId: action.CityId,
-                            OriginCountry: action.OriginCountry
-                        }
-                    )
-                }
-            );
-        case 'UPDATE_CURRENT_CITY_CONDITIONS':
-            return Object.assign({},
-                state,
-                {
-                    currentlyDisplayed: Object.assign({},
-                        state.currentlyDisplayed,
-                        {
-                            WeatherText: action.WeatherText,
-                            WeatherIcon: action.WeatherIcon,
-                            Temperature: action.Temperature
-                        }
-                    )
-                }
-            );
+            };
         default:
             return state || [];
     }
@@ -144,7 +196,7 @@ store.subscribe(throttle(() => {
 
 ReactDOM.render(
     <Provider store={store}>
-        {localStorage.clear()}
+        {/*{localStorage.clear()}*/}
         <App />
     </Provider>,
     document.getElementById('root'));

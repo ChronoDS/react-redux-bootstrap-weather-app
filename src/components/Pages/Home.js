@@ -1,24 +1,16 @@
 import React from 'react';
+import {connect} from "react-redux";
 import './Home.scss';
 import Header from "../Common/Header";
 import NextDays from "../Common/NextDays";
-import {connect} from "react-redux";
-import {next5DaysPrediction} from '../../assets/jsonExamples/examplePackets'
 import {requestLocationKey, requestCurrentConditionsByKey} from '../Utils/apiUtils'
 
 class Home extends React.Component {
     componentDidMount() {
+        // TODO check TTL and not send a redundant request.
         requestLocationKey(this.props.defaultCity)
             .then(value => {
-                console.log('1. Location value: ', value);
-                return value.data
-            })
-            .then(value => {
-                console.log('2. Location.data value: ', value);
-                return value[0]
-            })
-            .then(value => {
-                console.log('3. Location.data[0] value: ', value.key);
+                // TODO move dispatch to actionCreators.
                 this.props.dispatch({
                     type: 'UPDATE_CURRENT_CITY_INFO',
                     City: value.EnglishName,
@@ -28,14 +20,14 @@ class Home extends React.Component {
                 return value.Key
             })
             .then(value => requestCurrentConditionsByKey(value))
-            .then(value => value.data)
-            .then(value => value[0])
             .then(value => {
+                // TODO move dispatch to actionCreators.
                 this.props.dispatch({
                     type: 'UPDATE_CURRENT_CITY_CONDITIONS',
                     WeatherText: value.WeatherText,
                     WeatherIcon: value.WeatherIcon,
-                    Temperature: value.Temperature.Metric.Value
+                    Temperature: value.Temperature.Metric.Value,
+                    IsDayTime: value.IsDayTime
                 });
                 return value
             })
@@ -46,13 +38,14 @@ class Home extends React.Component {
         return (
             <div className={'jumbotron home'}>
                 <Header {...this.props} />
-                <NextDays {...next5DaysPrediction}/>
+                <NextDays {...this.props} />
             </div>
         )
     }
 }
 
 const mapStateToProps = state => ({
+    TTL: state.TTL,
     isCelsius: state.isCelsius,
     defaultCity: state.defaultCity,
     city: state.currentlyDisplayed.City,
@@ -60,7 +53,8 @@ const mapStateToProps = state => ({
     originCountry: state.currentlyDisplayed.OriginCountry,
     weatherText: state.currentlyDisplayed.WeatherText,
     weatherIcon: state.currentlyDisplayed.WeatherIcon,
-    temperature: state.currentlyDisplayed.Temperature
+    temperature: state.currentlyDisplayed.Temperature,
+    DailyForecasts: state.currentlyDisplayed.DailyForecasts
 })
 
 export default connect(mapStateToProps)(Home);

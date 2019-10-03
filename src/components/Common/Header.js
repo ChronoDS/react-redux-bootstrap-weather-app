@@ -18,10 +18,11 @@ class Header extends React.Component {
             isCelsius,
             weatherText,
             weatherIcon,
-            temperature
+            temperature,
+            IsDayTime
         } = this.props;
         return (
-            <header className="masthead border-bottom">
+            <header className={`masthead border-bottom ${IsDayTime? `day` : `night`}`}>
                 <div className="d-flex justify-content-start pl-lg-5">
                     <div className="btn-group pt-3">
                         <button type="button"

@@ -1,8 +1,11 @@
-.masthead {
-  background: url("./../../assets/img/tlv_1.jpg") center;
-}
 .masthead .city-info {
   background: #64a19d70;
+}
+.masthead.day {
+  background: url("./../../assets/img/tlv_1.jpg") center;
+}
+.masthead.night {
+  background: url("./../../assets/img/tlv_2.jpg") center;
 }
 
 /*# sourceMappingURL=Header.css.map */

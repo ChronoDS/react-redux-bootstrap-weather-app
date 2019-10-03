@@ -1,24 +1,23 @@
-import React from 'react'
-import TemperatureIndicator from "./TemperatureIndicator";
-import {celsiusToFahrenheit, urlFromImgId, getDayOfWeek, dateFormatting} from "../Utils/baseUtils";
+import React from 'react';
 import {connect} from "react-redux";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import TemperatureIndicator from "./TemperatureIndicator";
+import {celsiusToFahrenheit, getDayOfWeek, dateFormatting} from "../Utils/baseUtils";
 
 class NextDaysItem extends React.Component {
     render() {
         const {
-            EpochDate,
             key,
             isCelsius,
+            Date,
+            EpochDate,
             Temperature,
-            Night,
-            Day,
-            Date
         } = this.props;
         return (
             <div className="col-md-2">
                 <div className="card mb-4 shadow-sm">
                     <div className="card-body text-center">
-                        <h6 className="text-uppercase m-2">{getDayOfWeek(EpochDate, key)}</h6>
+                        <h6 className="text-uppercase m-2">{getDayOfWeek(EpochDate)}</h6>
                         <h4 className="text-uppercase m-0">
                             {isCelsius ?
                                 `${Temperature.Minimum.Value}\xB0
@@ -33,12 +32,10 @@ class NextDaysItem extends React.Component {
                                 temperature={Temperature.Maximum.Value}/>
                         </div>
                         <div className="d-flex justify-content-around">
-                            <img src={urlFromImgId(Night.Icon)}
-                                 crossOrigin="anonymous"
-                                 alt={Day.IconPhrase} />
-                            <img src={urlFromImgId(Day.Icon)}
-                                 crossOrigin="anonymous"
-                                 alt={Night.IconPhrase} />
+                            <FontAwesomeIcon
+                                icon="moon" style={{color: '#2e3ed9'}}/>
+                            <FontAwesomeIcon
+                                icon="sun" style={{color: '#d9d167'}}/>
                         </div>
                         <hr className="my-4" />
                         <p className="text-uppercase m-2 small">
@@ -47,13 +44,7 @@ class NextDaysItem extends React.Component {
                     </div>
                 </div>
             </div>
-
         )
     }
 }
-
-const mapStateToProps = state => ({
-    isCelsius: state.isCelsius
-})
-
-export default connect(mapStateToProps)(NextDaysItem);
+export default connect()(NextDaysItem);

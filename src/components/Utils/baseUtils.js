@@ -1,8 +1,7 @@
 
 export const urlFromImgId = (weatherImageNumber) => {
     const url = 'http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/';
-    return `${url}${weatherImageNumber > 9 ?
-        weatherImageNumber
+    return `${url}${weatherImageNumber > 9 ? weatherImageNumber
         : `0`+weatherImageNumber}-s.png`
 }
 
@@ -10,7 +9,7 @@ export const celsiusToFahrenheit = deg => {
     return ((deg * 1.8) + 32).toFixed(1);
 }
 
-export const getDayOfWeek = (epochTime, id) => {
+export const getDayOfWeek = (epochTime) => {
     let date = (new Date(epochTime*1000)).getDay();
     const weekday = [];
     weekday[0] =  "Sunday";
@@ -32,5 +31,6 @@ export const dateFormatting = (rawDate, id) => {
 
 // TODO add case of empty string
 export const replaceSpacesInCityQuery = (cityName) => {
+    // if (cityName.isEmpty)
     return encodeURIComponent(cityName.trim());
 };

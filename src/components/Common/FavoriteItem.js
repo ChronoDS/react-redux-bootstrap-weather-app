@@ -46,9 +46,9 @@ class FavoriteItem extends React.Component {
                                 >
                                     <FontAwesomeIcon icon="trash-alt"/>
                                 </button>
-                                <button type="button" className="btn btn-sm btn-outline-secondary">
-                                    <FontAwesomeIcon icon="expand" />
-                                </button>
+                                {/*<button type="button" className="btn btn-sm btn-outline-secondary">*/}
+                                {/*    <FontAwesomeIcon icon="expand" />*/}
+                                {/*</button>*/}
                             </div>
                         </div>
                     </div>
