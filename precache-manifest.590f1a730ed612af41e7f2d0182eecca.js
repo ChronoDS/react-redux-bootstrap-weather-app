@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9c7f03d662770c9809704551e4becb52",
+    "revision": "f89a408d1af8a22d96b5d784ffa716c5",
     "url": "/daniel-shema-24-09-19/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/daniel-shema-24-09-19/static/css/2.e31a430a.chunk.css"
   },
   {
-    "revision": "e963b84dbf3430239a02",
+    "revision": "8f32ba7d376cfe7ffe58",
     "url": "/daniel-shema-24-09-19/static/css/main.7652bf5f.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/daniel-shema-24-09-19/static/js/2.3174eb30.chunk.js"
   },
   {
-    "revision": "e963b84dbf3430239a02",
-    "url": "/daniel-shema-24-09-19/static/js/main.2f6e9c13.chunk.js"
+    "revision": "8f32ba7d376cfe7ffe58",
+    "url": "/daniel-shema-24-09-19/static/js/main.86a7908c.chunk.js"
   },
   {
     "revision": "805afc7ab8ed3c11d1fc",
