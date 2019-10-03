@@ -2,16 +2,13 @@ import React from 'react'
 import NextDaysItem from "./NextDaysItem";
 import {connect} from "react-redux";
 import {requestNext5DaysForecast} from "../Utils/apiUtils";
+import {updateCurrentLocation5daysWeather} from '../Utils/actionCreators'
 
 class NextDays extends React.Component {
     componentDidMount() {
         requestNext5DaysForecast(this.props.cityId)
-            // TODO fix dispatch from nav example
             .then(value => {
-                this.props.dispatch({
-                    type: 'UPDATE_CURRENTS_WEEK_ENTIRELY',
-                    DailyForecasts: value
-                });
+                this.props.dispatch(updateCurrentLocation5daysWeather(value));
                 return value
             })
             .catch(reason => console.log('request5DaysConditions error: ',reason));

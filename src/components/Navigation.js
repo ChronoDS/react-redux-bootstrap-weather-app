@@ -5,58 +5,40 @@ import {withRouter} from "react-router";
 import './Navigation.scss';
 import {AsyncTypeahead, Highlighter, } from 'react-bootstrap-typeahead';
 import 'react-bootstrap-typeahead/css/Typeahead.css';
-import {autoSearchQuery, requestCurrentConditionsByKey, requestNext5DaysForecast} from './Utils/apiUtils'
+import { autoSearchQuery, requestCurrentConditionsByKey, requestNext5DaysForecast} from './Utils/apiUtils'
+import { appendAutoCompleteOptions, setQueryLoadingState,
+    updateCurrentCityInfoOffOfAutoComplete, updateCurrentCityWeatherInfo,
+    updateCurrentLocation5daysWeather, toggleThemeState, toggleTempState} from './Utils/actionCreators'
 
 class Navigation extends React.Component {
 
-    // TODO move dispatches to actionCreators.
     _handleSearch = (query) => {
-        this.props.dispatch({type: 'SET_IS_LOADING', isLoading: true});
+        this.props.dispatch(setQueryLoadingState(true));
         autoSearchQuery(query)
             .then(value => {
                 console.log('back from autoSearch: ', value);
                 return value;
             })
             .then(value => {
-                this.props.dispatch({
-                    type: 'ADD_SEARCH_OPTIONS',
-                    options: value,
-                    isLoading: false
-                });
-                this.props.dispatch({type: 'SET_IS_LOADING', isLoading: false});
+                this.props.dispatch(appendAutoCompleteOptions(value));
+                this.props.dispatch(setQueryLoadingState(false));
             })
     };
 
     handleSearchOptionSelection = selected => {
-        // TODO move dispatch to actionCreators.
-        this.props.dispatch({
-            type: 'UPDATE_CURRENT_CITY_INFO',
-            City: selected[0].LocalizedName,
-            CityId: selected[0].Key,
-            OriginCountry: selected[0].Country.LocalizedName,
-        })
+        this.props.dispatch(updateCurrentCityInfoOffOfAutoComplete(selected[0]))
         requestCurrentConditionsByKey(selected[0].Key)
             .then(value => {
-                // TODO move dispatch to actionCreators.
-                this.props.dispatch({
-                    type: 'UPDATE_CURRENT_CITY_CONDITIONS',
-                    WeatherText: value.WeatherText,
-                    WeatherIcon: value.WeatherIcon,
-                    Temperature: value.Temperature.Metric.Value,
-                    IsDayTime: value.IsDayTime
-                });
+                this.props.dispatch(updateCurrentCityWeatherInfo(value));
                 return value
             })
             .catch(reason => console.log('requestCurrentConditions error: ',reason));
         requestNext5DaysForecast(selected[0].Key)
-                .then(value => {
-                    this.props.dispatch({
-                        type: 'UPDATE_CURRENTS_WEEK_ENTIRELY',
-                        DailyForecasts: value
-                    });
-                    return value
-                })
-                .catch(reason => console.log('request5DaysConditions error: ',reason));
+            .then(value => {
+                this.props.dispatch(updateCurrentLocation5daysWeather(value));
+                return value
+            })
+            .catch(reason => console.log('request5DaysConditions error: ',reason));
 
         this.typeahead.getInstance().clear()
     };
@@ -95,7 +77,7 @@ class Navigation extends React.Component {
                                     <input type="checkbox"
                                            className="custom-control-input"
                                            id="themeSwitch"
-                                           onChange={() => this.props.dispatch({type: 'TOGGLE_THEME'})}
+                                           onChange={() => this.props.dispatch(toggleThemeState())}
                                            checked={!isLightTheme}
                                     />
                                     <label
@@ -107,7 +89,7 @@ class Navigation extends React.Component {
                                     <input type="checkbox"
                                            className="custom-control-input"
                                            id="temperatureSwitch"
-                                           onChange={() => this.props.dispatch({type: 'TOGGLE_TEMP'})}
+                                           onChange={() => this.props.dispatch(toggleTempState())}
                                            checked={!isCelsius}
                                     />
                                     <label

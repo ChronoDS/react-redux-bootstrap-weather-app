@@ -4,31 +4,19 @@ import './Home.scss';
 import Header from "../Common/Header";
 import NextDays from "../Common/NextDays";
 import {requestLocationKey, requestCurrentConditionsByKey} from '../Utils/apiUtils'
+import {updateCurrentCityGeneralInfo, updateCurrentCityWeatherInfo} from '../Utils/actionCreators'
 
 class Home extends React.Component {
     componentDidMount() {
         // TODO check TTL and not send a redundant request.
         requestLocationKey(this.props.city)
             .then(value => {
-                // TODO move dispatch to actionCreators.
-                this.props.dispatch({
-                    type: 'UPDATE_CURRENT_CITY_INFO',
-                    City: value.EnglishName,
-                    CityId: value.Key,
-                    OriginCountry: value.Country.EnglishName,
-                });
+                this.props.dispatch(updateCurrentCityGeneralInfo(value));
                 return value.Key
             })
             .then(value => requestCurrentConditionsByKey(value))
             .then(value => {
-                // TODO move dispatch to actionCreators.
-                this.props.dispatch({
-                    type: 'UPDATE_CURRENT_CITY_CONDITIONS',
-                    WeatherText: value.WeatherText,
-                    WeatherIcon: value.WeatherIcon,
-                    Temperature: value.Temperature.Metric.Value,
-                    IsDayTime: value.IsDayTime
-                });
+                this.props.dispatch(updateCurrentCityWeatherInfo(value));
                 return value
             })
             .catch(reason => console.log('requestCurrentConditions error: ',reason));

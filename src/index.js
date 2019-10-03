@@ -230,7 +230,7 @@ const reducer = (state = initialState, action) => {
                     ...state.options,
                     ...action.options
                 ]
-            }
+            };
         case 'ADD_FAVORITE':
             const favoriteExists = state.favorites.find( ({ CityId }) => CityId === action.CityId );
             if (favoriteExists !== undefined) {
@@ -289,45 +289,6 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 currentlyDisplayedDailyForecasts: action.DailyForecasts
             };
-        // case 'UPDATE_CURRENTS_NEXT_5_DAYS':
-        //     const dayExists = state.favorites.find( ({ Date }) => Date === action.Date );
-        //     if (dayExists !== undefined) {
-        //         return {
-        //             ...state,
-        //             currentlyDisplayed: {
-        //                 ...state.currentlyDisplayed,
-        //                 DailyForecasts: state.currentlyDisplayed.DailyForecasts.map((value) => {
-        //                     if (value.Date === action.Date && value.CityId === action.CityId) {
-        //                         return {
-        //                             ...value,
-        //                             Temperature: action.Temperature,
-        //                             DayIcon: action.Day,
-        //                             NightIcon: action.Night
-        //                         }
-        //                     }
-        //                     return value;
-        //                 })
-        //             }
-        //         }
-        //     }
-        //     return {
-        //         ...state,
-        //         currentlyDisplayed: {
-        //             ...state.currentlyDisplayed,
-        //             DailyForecasts: [
-        //                 ...state.currentlyDisplayed.DailyForecasts
-        //                     .filter(day => day.CityId === action.CityId),
-        //                 {
-        //                     CityId: action.CityId,
-        //                     EpochDate: action.EpochDate,
-        //                     Date: action.Date,
-        //                     Temperature: action.Temperature,
-        //                     DayIcon: action.Day,
-        //                     NightIcon: action.Night
-        //                 }
-        //             ]
-        //         }
-        //     };
         default:
             return state || [];
     }
