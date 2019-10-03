@@ -1,7 +1,7 @@
+export const images = require.context('../../../public/images', true);
 
 export const urlFromImgId = (weatherImageNumber) => {
-    const url = 'https://cors-anywhere.herokuapp.com/http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/';
-    return `${url}${weatherImageNumber > 9 ? weatherImageNumber
+    return `./${weatherImageNumber > 9 ? weatherImageNumber
         : `0`+weatherImageNumber}-s.png`
 }
 

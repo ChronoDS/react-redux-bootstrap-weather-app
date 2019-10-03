@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from "react-redux";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import TemperatureIndicator from "./TemperatureIndicator";
-import {celsiusToFahrenheit, getDayOfWeek, dateFormatting} from "../Utils/baseUtils";
+import {celsiusToFahrenheit, getDayOfWeek, dateFormatting, images, urlFromImgId} from "../Utils/baseUtils";
 
 class NextDaysItem extends React.Component {
     render() {
@@ -12,6 +12,8 @@ class NextDaysItem extends React.Component {
             Date,
             EpochDate,
             Temperature,
+            Day,
+            Night
         } = this.props;
         return (
             <div className="col-md-2">
@@ -32,10 +34,12 @@ class NextDaysItem extends React.Component {
                                 temperature={Temperature.Maximum.Value}/>
                         </div>
                         <div className="d-flex justify-content-around">
-                            <FontAwesomeIcon
-                                icon="moon" style={{color: '#2e3ed9'}}/>
-                            <FontAwesomeIcon
-                                icon="sun" style={{color: '#d9d167'}}/>
+                            <img src={images(urlFromImgId(Day.Icon))}
+                                 crossOrigin="anonymous"
+                                 alt={Day.IconPhrase} />
+                            <img src={images(urlFromImgId(Night.Icon))}
+                                 crossOrigin="anonymous"
+                                 alt={Night.IconPhrase} />
                         </div>
                         <hr className="my-4" />
                         <p className="text-uppercase m-2 small">

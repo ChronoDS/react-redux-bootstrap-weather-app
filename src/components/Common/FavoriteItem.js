@@ -3,7 +3,7 @@ import './FavoriteItem.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import TemperatureIndicator from "./TemperatureIndicator";
 import {connect} from "react-redux";
-import {celsiusToFahrenheit, urlFromImgId} from "../Utils/baseUtils";
+import {celsiusToFahrenheit, urlFromImgId, images} from "../Utils/baseUtils";
 import {removeFromFavorites} from '../Utils/actionCreators';
 
 class FavoriteItem extends React.Component {
@@ -21,7 +21,7 @@ class FavoriteItem extends React.Component {
             <div className="col-md-4">
                 <div className="card mb-4 shadow-sm">
                     <div className="card-body text-center">
-                        <img src={urlFromImgId(WeatherIcon)}
+                        <img src={images(urlFromImgId(WeatherIcon))}
                              crossOrigin="anonymous"
                              alt={WeatherText} />
                         <h4 className="text-uppercase m-0">{City}</h4>
