@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "eb42d051db9fe19f61497b835147fde5",
+    "revision": "d2270c395cea3ab1e484ed085835b583",
     "url": "/daniel-shema-24-09-19/index.html"
   },
   {
-    "revision": "13e16184a0cad58fdf0b",
+    "revision": "e458d74500b5cdafd060",
     "url": "/daniel-shema-24-09-19/static/css/2.e31a430a.chunk.css"
   },
   {
-    "revision": "b39c25e2d358ceaa3782",
+    "revision": "e9053124ffdf2dfa69c7",
     "url": "/daniel-shema-24-09-19/static/css/main.008f61a0.chunk.css"
   },
   {
-    "revision": "13e16184a0cad58fdf0b",
-    "url": "/daniel-shema-24-09-19/static/js/2.979fb484.chunk.js"
+    "revision": "e458d74500b5cdafd060",
+    "url": "/daniel-shema-24-09-19/static/js/2.65acb9d4.chunk.js"
   },
   {
-    "revision": "b39c25e2d358ceaa3782",
-    "url": "/daniel-shema-24-09-19/static/js/main.58d3c8d3.chunk.js"
+    "revision": "e9053124ffdf2dfa69c7",
+    "url": "/daniel-shema-24-09-19/static/js/main.d7dafc56.chunk.js"
   },
   {
     "revision": "805afc7ab8ed3c11d1fc",
