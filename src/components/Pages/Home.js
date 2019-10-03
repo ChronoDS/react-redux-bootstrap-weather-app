@@ -38,7 +38,7 @@ class Home extends React.Component {
         return (
             <div className={'jumbotron home'}>
                 <Header {...this.props} />
-                <NextDays {...this.props} />
+                {/*<NextDays {...this.props} />*/}
             </div>
         )
     }
