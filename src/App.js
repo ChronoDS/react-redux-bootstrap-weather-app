@@ -17,7 +17,7 @@ function App() {
             <Navigation>
                 <Route
                     exact={true}
-                    path="/"
+                    path="/daniel-shema-24-09-19/"
                     component={Home}
                 />
                 <Route

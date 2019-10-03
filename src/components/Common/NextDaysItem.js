@@ -1,6 +1,5 @@
 import React from 'react';
 import {connect} from "react-redux";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import TemperatureIndicator from "./TemperatureIndicator";
 import {celsiusToFahrenheit, getDayOfWeek, dateFormatting, images, urlFromImgId} from "../Utils/baseUtils";
 
