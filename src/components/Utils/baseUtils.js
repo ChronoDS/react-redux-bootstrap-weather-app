@@ -1,6 +1,6 @@
 
 export const urlFromImgId = (weatherImageNumber) => {
-    const url = 'http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/';
+    const url = 'https://cors-anywhere.herokuapp.com/http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/';
     return `${url}${weatherImageNumber > 9 ? weatherImageNumber
         : `0`+weatherImageNumber}-s.png`
 }

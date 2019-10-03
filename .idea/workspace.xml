@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6693fe55-73b5-4680-829e-bd125f192033" name="Default Changelist" comment="fixed nesting keys access problem, refactored app-wide. frequent backup protocol - m2 is fluctuating.">
+    <list default="true" id="6693fe55-73b5-4680-829e-bd125f192033" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/jsonExamples/examplePackets.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Utils/apiUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Utils/apiUtils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Utils/baseUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Utils/baseUtils.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -95,7 +94,7 @@
       <workItem from="1569485984457" duration="25026000" />
       <workItem from="1569571937735" duration="53950000" />
       <workItem from="1569841558633" duration="61165000" />
-      <workItem from="1570004249765" duration="58442000" />
+      <workItem from="1570004249765" duration="59237000" />
     </task>
     <task id="LOCAL‎00001" summary="Added logics, favs and home with next 5 days. also added docs for github pages.">
       <created>1569615664431</created>
@@ -163,7 +162,13 @@
       <option name="presentableId" value="LOCAL‎00011" />
       <updated>1570105001929</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL‎00012" summary="added heroko tunnel for CORS HTTPS bypass. frequent backup protocol - m2 is fluctuating.">
+      <created>1570110552414</created>
+      <option name="number" value="LOCAL‎00012" />
+      <option name="presentableId" value="LOCAL‎00012" />
+      <updated>1570110552414</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,6 +201,7 @@
     <MESSAGE value="add-rem Favorite refactored and is working app-wide. favorites page fully functioning. favoriteItem and header only get props from connected parents, no need for self connectivity by themselves. &#10;key and current locations axios requests works fully. &#10;frequent backup protocol - m2 is fluctuating." />
     <MESSAGE value="added autoComplete search, working app-wide. fully refactored reducer, spread oriented. refactored api requests. frequent backup protocol - m2 is fluctuating." />
     <MESSAGE value="fixed nesting keys access problem, refactored app-wide. frequent backup protocol - m2 is fluctuating." />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed nesting keys access problem, refactored app-wide. frequent backup protocol - m2 is fluctuating." />
+    <MESSAGE value="added heroko tunnel for CORS HTTPS bypass. frequent backup protocol - m2 is fluctuating." />
+    <option name="LAST_COMMIT_MESSAGE" value="added heroko tunnel for CORS HTTPS bypass. frequent backup protocol - m2 is fluctuating." />
   </component>
 </project>
