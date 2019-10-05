@@ -18,4 +18,4 @@ export const saveState = (state) => {
     } catch (err) {
         console.log(Error('LocalStorage: saveState() Failed. Error: '+err));
     }
-}
+};

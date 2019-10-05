@@ -49,6 +49,6 @@ export const isWeatherInformationObsolete = (currentDate,TTL) => {
             return true;
         }
     }
-    console.log('No Need To Update CurrentConditions! - Conditions Relevant');
+    // console.log('No Need To Update CurrentConditions! - Conditions Relevant');
     return false;
 };

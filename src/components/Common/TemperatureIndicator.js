@@ -16,10 +16,10 @@ class TemperatureIndicator extends React.Component {
         } else {
             return ["thermometer-empty", '#248eec'];
         }
-    }
+    };
 
     render() {
-        const TemperatureIndicators =  this.setIndicatorColor(this.props.temperature)
+        const TemperatureIndicators =  this.setIndicatorColor(this.props.temperature);
         return (
             <FontAwesomeIcon
                 className={`primary mb-2 ${this.props.className}`}

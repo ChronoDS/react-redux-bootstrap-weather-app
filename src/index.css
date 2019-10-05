@@ -1,12 +1,3 @@
-/* might be html:root { */
-/*:root {*/
-/*  --primary-color: #302AE6;*/
-/*  --secondary-color: #536390;*/
-/*  --font-color: #424242;*/
-/*  --bg-color: #fff;*/
-/*  --heading-color: #292922;*/
-/*}*/
-
 :root {
   --primary-color: #302AE6;
   --secondary-color: #536390;
@@ -14,15 +5,25 @@
   --bg-color: #fff;
   --heading-color: #292922;
 
-  /*100: '#EEF9FF',*/
-  /*200: '#D3F1FF',*/
-  /*300: '#B9E9FF',*/
-  /*400: '#85D8FF',*/
-  /*500: '#50C7FF',*/
-  /*600: '#48B3E6',*/
-  /*700: '#307799',*/
-  /*800: '#245A73',*/
-  /*900: '#183C4D',*/
+  /*--card-bg-color: #B9E9FF;*/
+  /*--home-bg-color: #D3F1FF;*/
+  /*--bg-color: #183C4D;*/
+
+
+  --home-bg-color: #D3F1FF;
+  --card-bg-color: #B9E9FF;
+  --card-border-color: 1px solid rgba(0, 0, 0, 0.125);
+
+
+  --100: #EEF9FF;
+  --200: #D3F1FF;
+  --300: #B9E9FF;
+  --400: #85D8FF;
+  --500: #50C7FF;
+  --600: #48B3E6;
+  --700: #307799;
+  --800: #245A73;
+  --900: #183C4D;
 }
 
 [data-theme="dark"] {
@@ -31,6 +32,10 @@
   --font-color: #e1e1ff;
   --bg-color: #161625;
   --heading-color: #818cab;
+
+  --card-bg-color: #307799;
+  --home-bg-color: #183C4D;
+  --card-border-color: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 
@@ -58,15 +63,31 @@ a {
 }
 
 
-Header {
+.masthead {
   background-color: var(--bg-color);
   color: var(--font-color);
 }
 
 .card {
+  /*background-color: var(--card-bg-color);*/
+  /*color: var(--font-color);*/
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  border: var(--card-border-color);
+}
+
+.home {
+  /*background-color: var(--home-bg-color);*/
+  /*color: var(--font-color);*/
   background-color: var(--bg-color);
   color: var(--font-color);
 }
+
+
+
+/*.card .text-center {*/
+/*  color: var(--font-color);*/
+/*}*/
 
 /* this is for days items container - can play with it for assuming cool bg gradiant*/
 /*.col-md-2 {*/
@@ -92,12 +113,3 @@ Header {
 /*800: '#245A73',*/
 /*900: '#183C4D',*/
 /*},*/
-
-
-html.transition,
-html.transition *,
-html.transition *:before,
-html.transition *:after {
-  transition: all 750ms !important;
-  transition-delay: 0ms !important;
-}

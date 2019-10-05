@@ -35,7 +35,7 @@ class FavoriteItem extends React.Component {
                                 : celsiusToFahrenheit(Temperature)
                             }&#176;
                         </h5>
-                        <div className="small text-black-50">{WeatherText}</div>
+                        <div className="small">{WeatherText}</div>
 
                         <div className="d-flex justify-content-between align-items-center">
                             <div className="btn-group">

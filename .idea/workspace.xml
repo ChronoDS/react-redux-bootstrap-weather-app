@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6693fe55-73b5-4680-829e-bd125f192033" name="Default Changelist" comment="added expand favorite details on expand clicked.">
+    <list default="true" id="6693fe55-73b5-4680-829e-bd125f192033" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Common/FavoriteItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Common/FavoriteItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Common/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Common/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Utils/actionCreators.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Utils/actionCreators.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Utils/initialState.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Utils/initialState.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Utils/reducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Utils/reducers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Common/Header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Common/Header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Common/Header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Common/Header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Common/Image.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Common/TemperatureIndicator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Common/TemperatureIndicator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Pages/Home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Pages/Home.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Utils/baseUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Utils/baseUtils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Utils/localStorage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Utils/localStorage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,6 +51,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2018.3.5\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
@@ -100,7 +105,7 @@
       <workItem from="1569571937735" duration="53950000" />
       <workItem from="1569841558633" duration="61165000" />
       <workItem from="1570004249765" duration="94199000" />
-      <workItem from="1570262626335" duration="16141000" />
+      <workItem from="1570262626335" duration="20446000" />
     </task>
     <task id="LOCAL‎00001" summary="Added logics, favs and home with next 5 days. also added docs for github pages.">
       <created>1569615664431</created>
@@ -240,7 +245,13 @@
       <option name="presentableId" value="LOCAL‎00023" />
       <updated>1570292838291</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL‎00024" summary="added expand favorite details on expand clicked.">
+      <created>1570299078548</created>
+      <option name="number" value="LOCAL‎00024" />
+      <option name="presentableId" value="LOCAL‎00024" />
+      <updated>1570299078548</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
