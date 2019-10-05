@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from "react-redux";
 import TemperatureIndicator from "./TemperatureIndicator";
-import {celsiusToFahrenheit, getDayOfWeek, dateFormatting, images, urlFromImgId} from "../Utils/baseUtils";
+import {celsiusToFahrenheit, getDayOfWeek, dateFormatting, images, pathFromImgId} from "../Utils/baseUtils";
 
 class NextDaysItem extends React.Component {
     render() {
@@ -33,10 +33,10 @@ class NextDaysItem extends React.Component {
                                 temperature={Temperature.Maximum.Value}/>
                         </div>
                         <div className="d-flex justify-content-around">
-                            <img src={images(urlFromImgId(Day.Icon))}
+                            <img src={images(pathFromImgId(Day.Icon))}
                                  crossOrigin="anonymous"
                                  alt={Day.IconPhrase} />
-                            <img src={images(urlFromImgId(Night.Icon))}
+                            <img src={images(pathFromImgId(Night.Icon))}
                                  crossOrigin="anonymous"
                                  alt={Night.IconPhrase} />
                         </div>

@@ -33,6 +33,7 @@ class Home extends React.Component {
     }
 
     render() {
+        alert(this.getViewPortWidth());
         return (
             <div className={'jumbotron home'}>
                 <Header {...this.props} />

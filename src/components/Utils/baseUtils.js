@@ -1,16 +1,16 @@
 export const images = require.context('../../../public/images', true);
 
-export const urlFromImgId = (weatherImageNumber) => {
+export const pathFromImgId = (weatherImageNumber) => {
     if (weatherImageNumber === undefined || weatherImageNumber.length === 0) {
         return './01-s.png';
     }
     return `./${weatherImageNumber > 9 ? weatherImageNumber
         : `0`+weatherImageNumber}-s.png`
-}
+};
 
 export const celsiusToFahrenheit = deg => {
     return ((deg * 1.8) + 32).toFixed(1);
-}
+};
 
 export const getDayOfWeek = (epochTime) => {
     let date = (new Date(epochTime*1000)).getDay();
@@ -24,9 +24,9 @@ export const getDayOfWeek = (epochTime) => {
     weekday[6] = "Saturday";
 
     return weekday[date];
-}
+};
 
-export const dateFormatting = (rawDate, id) => {
+export const dateFormatting = (rawDate) => {
     let date = rawDate.substring(0, rawDate.indexOf('T'));
     date = date.split("-").reverse().join("-");
     return date;
@@ -44,11 +44,11 @@ export const isWeatherInformationObsolete = (currentDate,TTL) => {
         return true;
     } else {
         const elapsedTimeInSeconds = Math.floor((currentDate - TTL)/1000);
-        const relevancyPeriod = 18000; // five hours.
+        const relevancyPeriod = 18000;
         if (elapsedTimeInSeconds < relevancyPeriod) {
             return true;
         }
     }
     console.log('No Need To Update CurrentConditions! - Conditions Relevant');
     return false;
-}
+};

@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import './Header.scss'
 import TemperatureIndicator from "./TemperatureIndicator";
-import {urlFromImgId, celsiusToFahrenheit, images} from '../Utils/baseUtils';
+import {pathFromImgId, celsiusToFahrenheit, images} from '../Utils/baseUtils';
 import {addToFavorites, removeFromFavorites} from '../Utils/actionCreators';
 
 class Header extends React.Component {
@@ -54,7 +54,7 @@ class Header extends React.Component {
                     <div className="mx-auto text-center">
                         <h1 className="mx-auto my-0 text-uppercase text-white border city-info">{city}</h1>
                         <p className="mx-auto my-0 text-white city-info">{originCountry}</p>
-                        <img src={images(urlFromImgId(weatherIcon))}
+                        <img src={images(pathFromImgId(weatherIcon))}
                              crossOrigin="anonymous"
                              alt={weatherText} />
                         <h2 className="text-white mx-auto mt-2 mb-5 city-info">

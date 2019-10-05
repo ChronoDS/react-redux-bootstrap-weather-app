@@ -1,6 +1,6 @@
 import axios from "axios";
 import {replaceSpacesInCityQuery} from "./baseUtils";
-import {apiKey} from '../../assets/AccuWeatherKey'
+import {apiKey} from '../../assets/AccuWeatherKey';
 
 export const requestLocationKey = location => {
     location = replaceSpacesInCityQuery(location);
