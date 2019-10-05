@@ -1,10 +1,28 @@
 /* might be html:root { */
+/*:root {*/
+/*  --primary-color: #302AE6;*/
+/*  --secondary-color: #536390;*/
+/*  --font-color: #424242;*/
+/*  --bg-color: #fff;*/
+/*  --heading-color: #292922;*/
+/*}*/
+
 :root {
   --primary-color: #302AE6;
   --secondary-color: #536390;
   --font-color: #424242;
   --bg-color: #fff;
   --heading-color: #292922;
+
+  /*100: '#EEF9FF',*/
+  /*200: '#D3F1FF',*/
+  /*300: '#B9E9FF',*/
+  /*400: '#85D8FF',*/
+  /*500: '#50C7FF',*/
+  /*600: '#48B3E6',*/
+  /*700: '#307799',*/
+  /*800: '#245A73',*/
+  /*900: '#183C4D',*/
 }
 
 [data-theme="dark"] {

@@ -4,22 +4,24 @@ import './Home.scss';
 import Header from "../Common/Header";
 import NextDays from "../Common/NextDays";
 import {requestLocationKey, requestCurrentConditionsByKey} from '../Utils/apiUtils'
+import {isWeatherInformationObsolete} from '../Utils/baseUtils'
 import {updateCurrentCityGeneralInfo, updateCurrentCityWeatherInfo} from '../Utils/actionCreators'
 
 class Home extends React.Component {
     componentDidMount() {
-        // TODO check TTL and not send a redundant request.
-        requestLocationKey(this.props.city)
-            .then(value => {
-                this.props.dispatch(updateCurrentCityGeneralInfo(value));
-                return value.Key
-            })
-            .then(value => requestCurrentConditionsByKey(value))
-            .then(value => {
-                this.props.dispatch(updateCurrentCityWeatherInfo(value));
-                return value
-            })
-            .catch(reason => console.log('requestCurrentConditions error: ',reason));
+        if(isWeatherInformationObsolete(Date.now(new Date()), this.props.TTL)) {
+            requestLocationKey(this.props.city)
+                .then(value => {
+                    this.props.dispatch(updateCurrentCityGeneralInfo(value));
+                    return value.Key
+                })
+                .then(value => requestCurrentConditionsByKey(value))
+                .then(value => {
+                    this.props.dispatch(updateCurrentCityWeatherInfo(value));
+                    return value
+                })
+                .catch(reason => console.log('requestCurrentConditions error: ', reason));
+        }
     }
 
     getViewPortWidth(){
@@ -35,12 +37,6 @@ class Home extends React.Component {
             <div className={'jumbotron home'}>
                 <Header {...this.props} />
                 <NextDays {...this.props} />
-
-                {/*<footer className="page-footer text-black-50">*/}
-                {/*    <div className="footer-copyright text-center py-3">© 2019 Copyright:*/}
-                {/*        <a href="https://github.com/ChronoDS"> Daniel Shema.</a>*/}
-                {/*    </div>*/}
-                {/*</footer>*/}
             </div>
         )
     }
@@ -57,6 +53,6 @@ const mapStateToProps = state => ({
     weatherIcon: state.currentlyDisplayedWeatherIcon,
     temperature: state.currentlyDisplayedTemperature,
     DailyForecasts: state.currentlyDisplayedDailyForecasts
-})
+});
 
 export default connect(mapStateToProps)(Home);

@@ -38,3 +38,17 @@ export const replaceSpacesInCityQuery = (cityName) => {
     }
     return encodeURIComponent(cityName.trim());
 };
+
+export const isWeatherInformationObsolete = (currentDate,TTL) => {
+    if (TTL === '') {
+        return true;
+    } else {
+        const elapsedTimeInSeconds = Math.floor((currentDate - TTL)/1000);
+        const relevancyPeriod = 18000; // five hours.
+        if (elapsedTimeInSeconds < relevancyPeriod) {
+            return true;
+        }
+    }
+    console.log('No Need To Update CurrentConditions! - Conditions Relevant');
+    return false;
+}

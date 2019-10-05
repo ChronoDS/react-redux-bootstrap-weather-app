@@ -45,7 +45,7 @@ export const updateCurrentCityGeneralInfo = generalInfo =>
         type: 'UPDATE_CURRENT_CITY_INFO',
         City: generalInfo.EnglishName,
         CityId: generalInfo.Key,
-        OriginCountry: generalInfo.Country.EnglishName,
+        OriginCountry: generalInfo.Country.EnglishName
     });
 
 export const updateCurrentCityWeatherInfo = weatherInfo =>
@@ -54,7 +54,8 @@ export const updateCurrentCityWeatherInfo = weatherInfo =>
         WeatherText: weatherInfo.WeatherText,
         WeatherIcon: weatherInfo.WeatherIcon,
         Temperature: weatherInfo.Temperature.Metric.Value,
-        IsDayTime: weatherInfo.IsDayTime
+        IsDayTime: weatherInfo.IsDayTime,
+        TTL: weatherInfo.EpochTime,
     });
 
 export const appendAutoCompleteOptions = queryBasedOptions =>

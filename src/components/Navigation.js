@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-import {connect, Provider} from 'react-redux';
+import {connect} from 'react-redux';
 import {withRouter} from "react-router";
 import './Navigation.scss';
 import {AsyncTypeahead, Highlighter, } from 'react-bootstrap-typeahead';
