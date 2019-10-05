@@ -24,14 +24,6 @@ class Home extends React.Component {
         }
     }
 
-    getViewPortWidth(){
-        try {
-            return document.body.clientWidth;
-        } catch (e) {
-            return 1000;
-        }
-    }
-
     render() {
         return (
             <div className={'jumbotron home'}>

@@ -172,10 +172,10 @@ export const initialState = {
         {
             City:"Tel Aviv",
             CityId:215854,
-            OriginCountry:"WhoTown",
-            Temperature:"5000",
-            WeatherText:"Sun Gone Nuclear",
-            WeatherIcon:"5",
+            OriginCountry:"Israel",
+            Temperature:"24",
+            WeatherText:"Sunny",
+            WeatherIcon:"1",
         },
         {
             City:"New York",

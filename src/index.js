@@ -1,11 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
-import {Provider} from "react-redux";
 import {store} from '../src/components/Utils/store'
-import {BrowserRouter as Router, Route} from "react-router-dom";
 import Root from "./Root";
 
 export const handleThemeChange = (isChecked) => {
@@ -15,14 +12,6 @@ export const handleThemeChange = (isChecked) => {
         document.documentElement.setAttribute('data-theme', 'light');
     }
 };
-//
-// ReactDOM.render(
-//     <Provider store={store}>
-//         <Router>
-//             <Route path="/" component={App}/>
-//         </Router>
-//     </Provider>,
-//     document.getElementById('root'));
 
 ReactDOM.render(<Root store={store} />, document.getElementById('root'));
 

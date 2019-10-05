@@ -10,10 +10,10 @@ const Root = ({ store }) => (
             <Route path="/" component={App} />
         </Router>
     </Provider>
-)
+);
 
 Root.propTypes = {
     store: PropTypes.object.isRequired
-}
+};
 
 export default Root
