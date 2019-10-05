@@ -6,8 +6,8 @@ import App from './App'
 
 const Root = ({ store }) => (
     <Provider store={store}>
-        <Router>
-            <Route path="/:filter?" component={App} />
+        <Router basename={process.env.PUBLIC_URL}>
+            <Route path="/" component={App} />
         </Router>
     </Provider>
 )

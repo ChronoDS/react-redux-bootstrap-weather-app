@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6693fe55-73b5-4680-829e-bd125f192033" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Root.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Root.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Root.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,6 +47,9 @@
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2018.3.5\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\danie\WebstormProjects\daniel-shema-24-09-19\src\components" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\danie\WebstormProjects\daniel-shema-24-09-19\src\assets\img" />
       <recent name="C:\Users\danie\WebstormProjects\daniel-shema-24-09-19\docs" />
@@ -98,7 +99,7 @@
       <workItem from="1569571937735" duration="53950000" />
       <workItem from="1569841558633" duration="61165000" />
       <workItem from="1570004249765" duration="94199000" />
-      <workItem from="1570262626335" duration="23223000" />
+      <workItem from="1570262626335" duration="24418000" />
     </task>
     <task id="LOCAL‎00001" summary="Added logics, favs and home with next 5 days. also added docs for github pages.">
       <created>1569615664431</created>
@@ -262,7 +263,13 @@
       <option name="presentableId" value="LOCAL‎00027" />
       <updated>1570306997887</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL‎00028" summary="fixed some routing issues and added Root component.">
+      <created>1570314949996</created>
+      <option name="number" value="LOCAL‎00028" />
+      <option name="presentableId" value="LOCAL‎00028" />
+      <updated>1570314949996</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -283,7 +290,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="implemented app-wide redux logic. refactoring of utility functions. frequent backup protocol - m2 is fluctuating." />
     <MESSAGE value="tweaked redux dispatches app-wide. frequent backup protocol - m2 is fluctuating." />
     <MESSAGE value="adding actionCreators. WIP on axios requests. extending baseUtils, adding apiUtils. frequent backup protocol - m2 is fluctuating." />
     <MESSAGE value="addFavorite is working. Header now pulls live data.&#10;extended baseUtils, cleaned and tweaked apiUtils. &#10;WIP on axios requests. &#10;frequent backup protocol - m2 is fluctuating." />
@@ -308,6 +314,7 @@
     <MESSAGE value="fixed color theme setups." />
     <MESSAGE value="fixed color theme setups and tweaked some more." />
     <MESSAGE value="fixed some routing issues" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed some routing issues" />
+    <MESSAGE value="fixed some routing issues and added Root component." />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed some routing issues and added Root component." />
   </component>
 </project>
