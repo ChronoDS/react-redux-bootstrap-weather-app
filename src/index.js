@@ -11,7 +11,7 @@ import throttle from 'lodash/throttle';
 // TODO move entire store and redux logic to dedicated locations.
 const initialState = {
     isCelsius: true,
-    isLightTheme: true,
+    theme: 'light',
     IsDayTime: true,
     currentlyDisplayedCity: 'Tel Aviv',
     currentlyDisplayedCityId: 215854,
@@ -220,7 +220,7 @@ const reducer = (state = initialState, action) => {
         case 'TOGGLE_TEMP':
             return { ...state, isCelsius: !state.isCelsius };
         case 'TOGGLE_THEME':
-            return { ...state, isLightTheme: !state.isLightTheme};
+            return { ...state, theme: action.theme};
         case 'SET_IS_LOADING':
             return { ...state, isLoading: action.isLoading};
         case 'ADD_SEARCH_OPTIONS':
@@ -306,9 +306,17 @@ store.subscribe(throttle(() => {
     saveState(store.getState());
 }, 1000));
 
+export const handleThemeChange = (isChecked) => {
+    if (isChecked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+    }
+};
+
 ReactDOM.render(
     <Provider store={store}>
-        {localStorage.clear()}
+        {/*{localStorage.clear()}*/}
         <App />
     </Provider>,
     document.getElementById('root'));

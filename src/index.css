@@ -1,23 +1,85 @@
+/* might be html:root { */
+:root {
+  --primary-color: #302AE6;
+  --secondary-color: #536390;
+  --font-color: #424242;
+  --bg-color: #fff;
+  --heading-color: #292922;
+}
+
+[data-theme="dark"] {
+  --primary-color: #9A97F3;
+  --secondary-color: #818cab;
+  --font-color: #e1e1ff;
+  --bg-color: #161625;
+  --heading-color: #818cab;
+}
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #B9E9FF;
+  /*background: #B9E9FF;*/
+  /*background-color: #343a40;*/
+
+  background-color: var(--bg-color);
+  color: var(--font-color);
+
 }
 
-/*
-'weather': {
-100: '#EEF9FF',
-200: '#D3F1FF',
-300: '#B9E9FF',
-400: '#85D8FF',
-500: '#50C7FF',
-600: '#48B3E6',
-700: '#307799',
-800: '#245A73',
-900: '#183C4D',
-},
-*/
+h1,h2,h3,h4,h5,h6 {
+  color: var(--secondary-color);
+}
+
+a {
+  color: var(--primary-color);
+}
+
+
+Header {
+  background-color: var(--bg-color);
+  color: var(--font-color);
+}
+
+.card {
+  background-color: var(--bg-color);
+  color: var(--font-color);
+}
+
+/* this is for days items container - can play with it for assuming cool bg gradiant*/
+/*.col-md-2 {*/
+/*  background-color: var(--bg-color);*/
+/*  color: var(--font-color);*/
+/*}*/
+
+/*footer {*/
+/*  background-color: var(--bg-color);*/
+/*  color: var(--font-color);*/
+/*}*/
+
+
+
+/*'weather': {*/
+/*100: '#EEF9FF',*/
+/*200: '#D3F1FF',*/
+/*300: '#B9E9FF',*/
+/*400: '#85D8FF',*/
+/*500: '#50C7FF',*/
+/*600: '#48B3E6',*/
+/*700: '#307799',*/
+/*800: '#245A73',*/
+/*900: '#183C4D',*/
+/*},*/
+
+
+html.transition,
+html.transition *,
+html.transition *:before,
+html.transition *:after {
+  transition: all 750ms !important;
+  transition-delay: 0ms !important;
+}

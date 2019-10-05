@@ -7,7 +7,7 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import Home from "./components/Pages/Home";
 import Favorites from "./components/Pages/Favorites";
-
+import {connect} from "react-redux";
 
 library.add(fab, fas);
 
@@ -30,4 +30,8 @@ function App() {
     );
 }
 
-export default App;
+const mapStateToProps = state => ({
+    theme: state.theme
+});
+
+export default connect(mapStateToProps)(App);

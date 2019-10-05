@@ -1,14 +1,17 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-import {connect} from 'react-redux';
+import {connect, Provider} from 'react-redux';
 import {withRouter} from "react-router";
 import './Navigation.scss';
 import {AsyncTypeahead, Highlighter, } from 'react-bootstrap-typeahead';
 import 'react-bootstrap-typeahead/css/Typeahead.css';
 import { autoSearchQuery, requestCurrentConditionsByKey, requestNext5DaysForecast} from './Utils/apiUtils'
-import { appendAutoCompleteOptions, setQueryLoadingState,
+import {
+    appendAutoCompleteOptions, setQueryLoadingState,
     updateCurrentCityInfoOffOfAutoComplete, updateCurrentCityWeatherInfo,
-    updateCurrentLocation5daysWeather, toggleThemeState, toggleTempState} from './Utils/actionCreators'
+    updateCurrentLocation5daysWeather, toggleThemeState, toggleTempState
+} from './Utils/actionCreators'
+import {handleThemeChange} from '../index'
 
 class Navigation extends React.Component {
 
@@ -24,7 +27,6 @@ class Navigation extends React.Component {
                 this.props.dispatch(setQueryLoadingState(false));
             })
     };
-
     handleSearchOptionSelection = selected => {
         this.props.dispatch(updateCurrentCityInfoOffOfAutoComplete(selected[0]))
         requestCurrentConditionsByKey(selected[0].Key)
@@ -43,10 +45,15 @@ class Navigation extends React.Component {
         this.typeahead.getInstance().clear()
     };
 
+    componentDidMount() {
+        handleThemeChange(!(this.props.theme==='light')) // TODO send a wrapper function that receives this.props.theme
+        // and runs 'handleThemeChange.
+    }
+
     render() {
         const {
             isCelsius,
-            isLightTheme,
+            theme,
             children
         } = this.props;
         return (
@@ -77,8 +84,11 @@ class Navigation extends React.Component {
                                     <input type="checkbox"
                                            className="custom-control-input"
                                            id="themeSwitch"
-                                           onChange={() => this.props.dispatch(toggleThemeState())}
-                                           checked={!isLightTheme}
+                                           onChange={(event) => {
+                                               this.props.dispatch(toggleThemeState(event.target.checked));
+                                               handleThemeChange(event.target.checked)
+                                           }}
+                                           checked={!(theme==='light')}
                                     />
                                     <label
                                         className="custom-control-label text-white pr-2"
@@ -126,7 +136,7 @@ class Navigation extends React.Component {
 
 const mapStateToProps = state => ({
     isCelsius: state.isCelsius,
-    isLightTheme: state.isLightTheme,
+    theme: state.theme,
     isLoading: state.isLoading,
     options: state.options
 })

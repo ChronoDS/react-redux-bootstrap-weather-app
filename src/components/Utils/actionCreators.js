@@ -78,6 +78,16 @@ export const updateCurrentCityInfoOffOfAutoComplete = selectionData =>
         OriginCountry: selectionData.Country.LocalizedName,
     });
 
-export const toggleThemeState = isLightTheme => ({type: 'TOGGLE_THEME'});
+export const toggleThemeState = isLightTheme => {
+    if (isLightTheme) {
+        return {
+            type: 'TOGGLE_THEME',
+            theme: 'dark'
+        }}
+    return {
+        type: 'TOGGLE_THEME',
+        theme: 'light'
+    }
+};
 
 export const toggleTempState = isTempCelsius => ({type: 'TOGGLE_TEMP'});

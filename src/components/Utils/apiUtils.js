@@ -2,7 +2,6 @@ import axios from "axios";
 import {replaceSpacesInCityQuery} from "./baseUtils";
 
 const apiKey = '9MpqiOaZsD1p9P11PloCiFHszwVAkUcT';
-// const apiKey = 'test';
 
 export const requestLocationKey = location => {
     location = replaceSpacesInCityQuery(location);

@@ -22,11 +22,25 @@ class Home extends React.Component {
             .catch(reason => console.log('requestCurrentConditions error: ',reason));
     }
 
+    getViewPortWidth(){
+        try {
+            return document.body.clientWidth;
+        } catch (e) {
+            return 1000;
+        }
+    }
+
     render() {
         return (
             <div className={'jumbotron home'}>
                 <Header {...this.props} />
                 <NextDays {...this.props} />
+
+                {/*<footer className="page-footer text-black-50">*/}
+                {/*    <div className="footer-copyright text-center py-3">© 2019 Copyright:*/}
+                {/*        <a href="https://github.com/ChronoDS"> Daniel Shema.</a>*/}
+                {/*    </div>*/}
+                {/*</footer>*/}
             </div>
         )
     }

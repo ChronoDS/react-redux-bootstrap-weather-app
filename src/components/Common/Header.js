@@ -19,6 +19,7 @@ class Header extends React.Component {
             temperature,
             IsDayTime
         } = this.props;
+        {/*<header className="container border-bottom day">*/}
         return (
             <header className={`masthead border-bottom ${IsDayTime? `day` : `night`}`}>
                 <div className="d-flex justify-content-start pl-lg-5">

@@ -14,7 +14,7 @@ class Favorites extends React.Component {
                                 return <FavoriteItem
                                     {...location}
                                     isCelsius={this.props.isCelsius}
-                                    isLightTheme={this.props.isLightTheme}
+                                    isLightTheme={this.props.theme}
                                     key={index}/>
                             })}
                         </div>
@@ -28,7 +28,7 @@ class Favorites extends React.Component {
 const mapStateToProps = state => ({
     favorites: state.favorites,
     isCelsius: state.isCelsius,
-    isLightTheme: state.isLightTheme
+    theme: state.theme
 });
 
 export default connect(mapStateToProps)(Favorites);
