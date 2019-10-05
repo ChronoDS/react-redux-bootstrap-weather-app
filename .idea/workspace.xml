@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6693fe55-73b5-4680-829e-bd125f192033" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Common/FavoriteItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Common/FavoriteItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Common/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Common/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Common/NextDaysItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Common/NextDaysItem.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Pages/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Pages/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Utils/apiUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Utils/apiUtils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Utils/baseUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Utils/baseUtils.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -100,7 +95,7 @@
       <workItem from="1569571937735" duration="53950000" />
       <workItem from="1569841558633" duration="61165000" />
       <workItem from="1570004249765" duration="94199000" />
-      <workItem from="1570262626335" duration="11296000" />
+      <workItem from="1570262626335" duration="12213000" />
     </task>
     <task id="LOCAL‎00001" summary="Added logics, favs and home with next 5 days. also added docs for github pages.">
       <created>1569615664431</created>
@@ -228,7 +223,13 @@
       <option name="presentableId" value="LOCAL‎00021" />
       <updated>1570290340069</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL‎00022" summary="fitted path producer name. removed unused argument.">
+      <created>1570290954550</created>
+      <option name="number" value="LOCAL‎00022" />
+      <option name="presentableId" value="LOCAL‎00022" />
+      <updated>1570290954550</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -271,6 +272,8 @@
     <MESSAGE value="refactored actionCreators. frequent backup protocol - m2 is fluctuating." />
     <MESSAGE value="added Light-Dark Modes with site remembrance." />
     <MESSAGE value="added TTL check so no redundant API calls would be made." />
-    <option name="LAST_COMMIT_MESSAGE" value="added TTL check so no redundant API calls would be made." />
+    <MESSAGE value="fitted path producer name." />
+    <MESSAGE value="fitted path producer name. removed unused argument." />
+    <option name="LAST_COMMIT_MESSAGE" value="fitted path producer name. removed unused argument." />
   </component>
 </project>
