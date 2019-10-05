@@ -5,6 +5,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {Provider} from "react-redux";
 import {store} from '../src/components/Utils/store'
+import {BrowserRouter as Router, Route} from "react-router-dom";
 
 export const handleThemeChange = (isChecked) => {
     if (isChecked) {
@@ -16,7 +17,9 @@ export const handleThemeChange = (isChecked) => {
 
 ReactDOM.render(
     <Provider store={store}>
-        <App />
+        <Router>
+            <Route path="/" component={App}/>
+        </Router>
     </Provider>,
     document.getElementById('root'));
 

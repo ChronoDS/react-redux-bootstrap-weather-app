@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6693fe55-73b5-4680-829e-bd125f192033" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -95,7 +97,7 @@
       <workItem from="1569571937735" duration="53950000" />
       <workItem from="1569841558633" duration="61165000" />
       <workItem from="1570004249765" duration="94199000" />
-      <workItem from="1570262626335" duration="20632000" />
+      <workItem from="1570262626335" duration="22430000" />
     </task>
     <task id="LOCAL‎00001" summary="Added logics, favs and home with next 5 days. also added docs for github pages.">
       <created>1569615664431</created>
@@ -247,7 +249,13 @@
       <option name="presentableId" value="LOCAL‎00025" />
       <updated>1570304974999</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL‎00026" summary="fixed color theme setups and tweaked some more.">
+      <created>1570305149037</created>
+      <option name="number" value="LOCAL‎00026" />
+      <option name="presentableId" value="LOCAL‎00026" />
+      <updated>1570305149037</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -268,7 +276,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added toggles for temp and theme. added states in relevant locations." />
     <MESSAGE value="WIP - connecting redux. frequent backup protocol - m2 is fluctuating." />
     <MESSAGE value="implemented app-wide redux logic. refactoring of utility functions. frequent backup protocol - m2 is fluctuating." />
     <MESSAGE value="tweaked redux dispatches app-wide. frequent backup protocol - m2 is fluctuating." />
@@ -293,6 +300,7 @@
     <MESSAGE value="added expand favorite details." />
     <MESSAGE value="added expand favorite details on expand clicked." />
     <MESSAGE value="fixed color theme setups." />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed color theme setups." />
+    <MESSAGE value="fixed color theme setups and tweaked some more." />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed color theme setups and tweaked some more." />
   </component>
 </project>

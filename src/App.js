@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Navigation from "./components/Navigation";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Route } from "react-router-dom";
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { fas } from '@fortawesome/free-solid-svg-icons'
@@ -13,11 +13,9 @@ library.add(fab, fas);
 
 function App() {
     return (
-        <Router>
             <Navigation>
                 <Route
                     exact={true}
-                    // path="/daniel-shema-24-09-19/"
                     path="/"
                     component={Home}
                 />
@@ -26,7 +24,6 @@ function App() {
                     component={Favorites}
                 />
             </Navigation>
-        </Router>
     );
 }
 
