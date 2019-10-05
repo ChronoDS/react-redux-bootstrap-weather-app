@@ -61,6 +61,13 @@ export const rootReducer = (state = initialState, action) => {
                 currentlyDisplayedCityId: action.CityId,
                 currentlyDisplayedOriginCountry: action.OriginCountry
             };
+        case 'TRIGGER_CITY_DATA_VIEW_BY_ITEM':
+            return {
+                ...state,
+                TTL: action.TTL,
+                currentlyDisplayedCityId: action.CityId,
+                currentlyDisplayedCity: action.City
+            };
         case 'UPDATE_CURRENT_CITY_CONDITIONS':
             return {
                 ...state,
@@ -78,4 +85,4 @@ export const rootReducer = (state = initialState, action) => {
         default:
             return state || [];
     }
-}
+};

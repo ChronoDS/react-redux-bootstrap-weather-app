@@ -48,6 +48,14 @@ export const updateCurrentCityGeneralInfo = generalInfo =>
         OriginCountry: generalInfo.Country.EnglishName
     });
 
+export const triggerRenderWithCurrentChoice = item =>
+    ({
+        type: 'TRIGGER_CITY_DATA_VIEW_BY_ITEM',
+        TTL: '',
+        CityId: item.CityId,
+        City: item.City
+    });
+
 export const updateCurrentCityWeatherInfo = weatherInfo =>
     ({
         type: 'UPDATE_CURRENT_CITY_CONDITIONS',
@@ -91,4 +99,4 @@ export const toggleThemeState = isLightTheme => {
     }
 };
 
-export const toggleTempState = isTempCelsius => ({type: 'TOGGLE_TEMP'});
+export const toggleTempState = () => ({type: 'TOGGLE_TEMP'});

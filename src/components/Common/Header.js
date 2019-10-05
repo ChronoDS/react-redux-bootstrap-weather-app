@@ -7,7 +7,6 @@ import {pathFromImgId, celsiusToFahrenheit, images} from '../Utils/baseUtils';
 import {addToFavorites, removeFromFavorites} from '../Utils/actionCreators';
 
 class Header extends React.Component {
-
     render() {
         const {
             city,

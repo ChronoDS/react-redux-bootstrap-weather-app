@@ -170,36 +170,36 @@ export const initialState = {
     options: [],
     favorites: [
         {
-            City: 'New JerTest',
-            CityId: '159259',
-            OriginCountry: 'USA',
-            Temperature: 14,
-            WeatherText: 'Chilly',
-            WeatherIcon: '11'
+            City:"Tel Aviv",
+            CityId:215854,
+            OriginCountry:"WhoTown",
+            Temperature:"5000",
+            WeatherText:"Sun Gone Nuclear",
+            WeatherIcon:"5",
         },
         {
-            City: 'JakaTest',
-            CityId: '158259',
-            OriginCountry: 'Jakika',
-            Temperature: 2500,
-            WeatherText: 'Hot!!',
-            WeatherIcon: '2'
+            City:"New York",
+            CityId:"349727",
+            OriginCountry:"United States",
+            Temperature:14.4,
+            WeatherText:"Sunny",
+            WeatherIcon:1
         },
         {
-            City: 'New YorkaTest',
-            CityId: '119359',
-            OriginCountry: 'USA',
-            Temperature: 14,
-            WeatherText: 'Chilly',
-            WeatherIcon: '11'
+            City:"Jerusalem",
+            CityId:"213225",
+            OriginCountry:"Israel",
+            Temperature:20.4,
+            WeatherText:"Mostly clear",
+            WeatherIcon:34
         },
         {
-            City: 'HaiJakaTest',
-            CityId: '158559',
-            OriginCountry: 'Jakika',
-            Temperature: 2500,
-            WeatherText: 'Hot!!',
-            WeatherIcon: '2'
+            City:"Haifa",
+            CityId:"213181",
+            OriginCountry:"Israel",
+            Temperature:26.1,
+            WeatherText:"Partly cloudy",
+            WeatherIcon:35
         },
     ]
-}
+};

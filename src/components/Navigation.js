@@ -15,7 +15,7 @@ import {handleThemeChange} from '../index'
 
 class Navigation extends React.Component {
 
-    _handleSearch = (query) => {
+    handleSearch = (query) => {
         this.props.dispatch(setQueryLoadingState(true));
         autoSearchQuery(query)
             .then(value => {
@@ -28,7 +28,7 @@ class Navigation extends React.Component {
             })
     };
     handleSearchOptionSelection = selected => {
-        this.props.dispatch(updateCurrentCityInfoOffOfAutoComplete(selected[0]))
+        this.props.dispatch(updateCurrentCityInfoOffOfAutoComplete(selected[0]));
         requestCurrentConditionsByKey(selected[0].Key)
             .then(value => {
                 this.props.dispatch(updateCurrentCityWeatherInfo(value));
@@ -46,8 +46,7 @@ class Navigation extends React.Component {
     };
 
     componentDidMount() {
-        handleThemeChange(!(this.props.theme==='light')) // TODO send a wrapper function that receives this.props.theme
-        // and runs 'handleThemeChange.
+        handleThemeChange(!(this.props.theme==='light'));
     }
 
     render() {
@@ -114,7 +113,7 @@ class Navigation extends React.Component {
                                 isLoading={this.props.isLoading}
                                 labelKey="LocalizedName"
                                 minLength={3}
-                                onSearch={this._handleSearch}
+                                onSearch={this.handleSearch}
                                 onChange={this.handleSearchOptionSelection}
                                 placeholder="Search for a city..."
                                 renderMenuItemChildren={(option, props) => (
@@ -139,8 +138,7 @@ const mapStateToProps = state => ({
     theme: state.theme,
     isLoading: state.isLoading,
     options: state.options
-})
+});
 
-// export default connect(mapStateToProps)(Navigation);
 export default withRouter(connect(mapStateToProps)(Navigation))
 
