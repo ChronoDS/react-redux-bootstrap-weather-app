@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e7737c1e6a6b9f5ab43fb1fa9f1d0015",
+    "revision": "e2892f0bdb8a6aee1c398d9d37336783",
     "url": "/daniel-shema-24-09-19/index.html"
   },
   {
-    "revision": "186a4410880b20b14176",
+    "revision": "be4c25bfab4e020b556f",
     "url": "/daniel-shema-24-09-19/static/css/2.e31a430a.chunk.css"
   },
   {
-    "revision": "8e57c5f4b0e1cb558be4",
+    "revision": "00f0fb6688026d6a27ba",
     "url": "/daniel-shema-24-09-19/static/css/main.16599e61.chunk.css"
   },
   {
-    "revision": "186a4410880b20b14176",
-    "url": "/daniel-shema-24-09-19/static/js/2.3efd9d51.chunk.js"
+    "revision": "be4c25bfab4e020b556f",
+    "url": "/daniel-shema-24-09-19/static/js/2.41be1b69.chunk.js"
   },
   {
-    "revision": "8e57c5f4b0e1cb558be4",
-    "url": "/daniel-shema-24-09-19/static/js/main.ce0ddd5f.chunk.js"
+    "revision": "00f0fb6688026d6a27ba",
+    "url": "/daniel-shema-24-09-19/static/js/main.8f68054b.chunk.js"
   },
   {
     "revision": "805afc7ab8ed3c11d1fc",
