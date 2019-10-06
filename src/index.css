@@ -8,6 +8,8 @@
   --home-bg-color: #D3F1FF;
   --card-bg-color: #B9E9FF;
   --card-border-color: 1px solid rgba(0, 0, 0, 0.125);
+  --main-btn-color: #6c757d;
+  --inFavorites-btn-color: #2943f0;
 }
 
 [data-theme="dark"] {
@@ -20,6 +22,8 @@
   --card-bg-color: #307799;
   --home-bg-color: #183C4D;
   --card-border-color: 1px solid rgba(255, 255, 255, 0.25);
+  --main-btn-color: #bfc9d1;
+  --inFavorites-btn-color: #9A97F3;
 }
 
 
@@ -57,4 +61,12 @@ a {
 .home {
   background-color: var(--bg-color);
   color: var(--font-color);
+}
+
+.main-btn {
+  color: var(--main-btn-color);
+}
+
+.inFavorites {
+  color: var(--inFavorites-btn-color);
 }

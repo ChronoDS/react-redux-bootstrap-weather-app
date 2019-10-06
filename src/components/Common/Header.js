@@ -7,6 +7,9 @@ import {pathFromImgId, celsiusToFahrenheit, images} from '../Utils/baseUtils';
 import {addToFavorites, removeFromFavorites} from '../Utils/actionCreators';
 
 class Header extends React.Component {
+
+    isInFavorites = (favorites) => favorites.find( ({ CityId }) => CityId === this.props.cityId );
+
     render() {
         const {
             city,
@@ -17,14 +20,16 @@ class Header extends React.Component {
             weatherIcon,
             temperature,
             IsDayTime,
-            TTL
+            TTL,
+            favorites
         } = this.props;
         return (
             <header className={`masthead border-bottom ${IsDayTime? `day` : `night`}`}>
                 <div className="d-flex justify-content-start pl-lg-5">
-                    <div className="btn-group pt-3">
+                    <div className="btn-group pt-3 main-btn">
                         <button type="button"
-                                className="btn btn-lg btn-outline-secondary"
+                                className="btn btn-lg btn-outline-secondary main-btn"
+                                style={{color:`${this.isInFavorites(favorites) !==undefined ? `#d3e137` : `#6c757d`}`}}
                                 onClick={() => {
                                     this.props.dispatch(
                                         addToFavorites({
@@ -41,7 +46,7 @@ class Header extends React.Component {
                             <FontAwesomeIcon icon="star" />
                         </button>
                         <button type="button"
-                                className="btn btn-lg btn-outline-secondary"
+                                className="btn btn-lg btn-outline-secondary main-btn"
                                 onClick={() => {
                                     this.props.dispatch(removeFromFavorites(cityId))
                                 }}

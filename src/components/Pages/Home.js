@@ -44,7 +44,8 @@ const mapStateToProps = state => ({
     weatherText: state.currentlyDisplayedWeatherText,
     weatherIcon: state.currentlyDisplayedWeatherIcon,
     temperature: state.currentlyDisplayedTemperature,
-    DailyForecasts: state.currentlyDisplayedDailyForecasts
+    DailyForecasts: state.currentlyDisplayedDailyForecasts,
+    favorites: state.favorites
 });
 
 export default connect(mapStateToProps)(Home);

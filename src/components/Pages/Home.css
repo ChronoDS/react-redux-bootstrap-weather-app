@@ -1,3 +1,7 @@
-
+.home {
+  height: 50vh;
+  width: 95vw;
+  object-fit: cover;
+}
 
 /*# sourceMappingURL=Home.css.map */
