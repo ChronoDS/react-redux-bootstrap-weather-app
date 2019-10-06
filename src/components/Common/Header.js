@@ -16,7 +16,8 @@ class Header extends React.Component {
             weatherText,
             weatherIcon,
             temperature,
-            IsDayTime
+            IsDayTime,
+            TTL
         } = this.props;
         return (
             <header className={`masthead border-bottom ${IsDayTime? `day` : `night`}`}>
@@ -26,14 +27,15 @@ class Header extends React.Component {
                                 className="btn btn-lg btn-outline-secondary"
                                 onClick={() => {
                                     this.props.dispatch(
-                                        addToFavorites(
+                                        addToFavorites({
                                             cityId,
                                             city,
                                             originCountry,
                                             weatherText,
                                             weatherIcon,
-                                            temperature
-                                        )
+                                            temperature,
+                                            TTL
+                                        })
                                     )
                                 }}>
                             <FontAwesomeIcon icon="star" />

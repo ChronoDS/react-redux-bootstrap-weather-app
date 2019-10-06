@@ -3,15 +3,19 @@ import NextDaysItem from "./NextDaysItem";
 import {connect} from "react-redux";
 import {requestNext5DaysForecast} from "../Utils/apiUtils";
 import {isWeatherInformationObsolete} from '../Utils/baseUtils'
-import {updateCurrentLocation5daysWeather} from '../Utils/actionCreators'
+import {updateCurrentLocation5daysWeather, setIsFavoriteFalse} from '../Utils/actionCreators'
 
 class NextDays extends React.Component {
     componentDidMount() {
-        if(isWeatherInformationObsolete(Date.now(new Date()), this.props.TTL)) {
+        if(isWeatherInformationObsolete(Date.now(new Date()), this.props.TTL) || this.props.isFavorite) {
             requestNext5DaysForecast(this.props.cityId)
                 .then(value => {
                     this.props.dispatch(updateCurrentLocation5daysWeather(value));
                     return value
+                })
+                .then((value) => {
+                    this.props.dispatch(setIsFavoriteFalse());
+                    return value;
                 })
                 .catch(reason => console.log('request5DaysConditions error: ', reason));
         }
@@ -38,7 +42,8 @@ const mapStateToProps = state => ({
     cityId: state.currentlyDisplayedCityId,
     isCelsius: state.isCelsius,
     DailyForecasts: state.currentlyDisplayedDailyForecasts,
-    TTL: state.TTL
+    TTL: state.TTL,
+    isFavorite: state.isFavorite
 });
 
 export default connect(mapStateToProps)(NextDays);

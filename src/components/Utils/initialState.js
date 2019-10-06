@@ -5,6 +5,7 @@ export const initialState = {
     currentlyDisplayedCity: 'Tel Aviv',
     currentlyDisplayedCityId: 215854,
     TTL: '',
+    isFavorite: false,
     currentlyDisplayedOriginCountry: 'WhoTown',
     currentlyDisplayedWeatherText: 'Sun Gone Nuclear',
     currentlyDisplayedWeatherIcon: '5',
@@ -176,6 +177,7 @@ export const initialState = {
             Temperature:"24",
             WeatherText:"Sunny",
             WeatherIcon:"1",
+            TTL: ''
         },
         {
             City:"New York",
@@ -183,7 +185,8 @@ export const initialState = {
             OriginCountry:"United States",
             Temperature:14.4,
             WeatherText:"Sunny",
-            WeatherIcon:1
+            WeatherIcon:1,
+            TTL: ''
         },
         {
             City:"Jerusalem",
@@ -191,7 +194,8 @@ export const initialState = {
             OriginCountry:"Israel",
             Temperature:20.4,
             WeatherText:"Mostly clear",
-            WeatherIcon:34
+            WeatherIcon:34,
+            TTL: ''
         },
         {
             City:"Haifa",
@@ -199,7 +203,8 @@ export const initialState = {
             OriginCountry:"Israel",
             Temperature:26.1,
             WeatherText:"Partly cloudy",
-            WeatherIcon:35
+            WeatherIcon:35,
+            TTL: ''
         },
     ]
 };

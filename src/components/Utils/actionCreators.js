@@ -15,16 +15,16 @@
 //     )
 // });
 
-export const addToFavorites = (cityId, city, originCountry,
-                               weatherText, weatherIcon, temperature) =>
+export const addToFavorites = item =>
     ({
         type: 'ADD_FAVORITE',
-        CityId: cityId,
-        City: city,
-        OriginCountry: originCountry,
-        Temperature: temperature,
-        WeatherText: weatherText,
-        WeatherIcon: weatherIcon
+        CityId: item.cityId,
+        City: item.city,
+        OriginCountry: item.originCountry,
+        Temperature: item.temperature,
+        WeatherText: item.weatherText,
+        WeatherIcon: item.weatherIcon,
+        TTL: item.TTL
     });
 
 export const removeFromFavorites = (cityId) =>
@@ -51,9 +51,10 @@ export const updateCurrentCityGeneralInfo = generalInfo =>
 export const triggerRenderWithCurrentChoice = item =>
     ({
         type: 'TRIGGER_CITY_DATA_VIEW_BY_ITEM',
-        TTL: '',
+        TTL: item.TTL,
         CityId: item.CityId,
-        City: item.City
+        City: item.City,
+        isFavorite: true
     });
 
 export const updateCurrentCityWeatherInfo = weatherInfo =>
@@ -100,3 +101,15 @@ export const toggleThemeState = isLightTheme => {
 };
 
 export const toggleTempState = () => ({type: 'TOGGLE_TEMP'});
+
+export const setIsFavoriteFalse = () => ({type: 'SET_IS_FAVORITE_FALSE'});
+
+export const updateFavorite = (item, CityId) =>
+    ({
+        type: 'UPDATE_FAVORITE',
+        CityId: CityId,
+        Temperature: item.Temperature.Metric.Value,
+        WeatherText: item.WeatherText,
+        WeatherIcon: item.WeatherIcon,
+        TTL: item.EpochTime
+    });

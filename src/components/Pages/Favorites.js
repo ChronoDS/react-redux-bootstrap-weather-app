@@ -2,8 +2,26 @@ import React from 'react';
 import './Favorites.scss';
 import FavoriteItem from "../Common/FavoriteItem";
 import {connect} from "react-redux";
+import {isWeatherInformationObsolete} from "../Utils/baseUtils";
+import {updateFavorite} from "../Utils/actionCreators";
+import {requestCurrentConditionsByKey} from "../Utils/apiUtils";
 
 class Favorites extends React.Component {
+
+    componentDidMount() {
+        const currentDate = Date.now(new Date());
+        this.props.favorites.map(favorite => {
+            if (isWeatherInformationObsolete(currentDate, favorite.TTL)) {
+            requestCurrentConditionsByKey(favorite.CityId)
+                    .then(value => {
+                        this.props.dispatch(updateFavorite(value, favorite.CityId));
+                        return value
+                    })
+                    .catch(reason => console.log('requestCurrentConditions error: ', reason));
+            } return favorite;
+        });
+    }
+
     render() {
         return (
             <div>

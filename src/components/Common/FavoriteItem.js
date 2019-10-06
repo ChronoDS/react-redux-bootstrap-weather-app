@@ -16,7 +16,8 @@ class FavoriteItem extends React.Component {
             OriginCountry,
             Temperature,
             WeatherText,
-            WeatherIcon
+            WeatherIcon,
+            TTL
         } = this.props;
         return (
             <div className="col-md-4">
@@ -48,7 +49,7 @@ class FavoriteItem extends React.Component {
                                     <FontAwesomeIcon icon="trash-alt"/>
                                 </button>
                                 <Link
-                                    onClick={() => this.props.dispatch(triggerRenderWithCurrentChoice({CityId, City}))}
+                                    onClick={() => this.props.dispatch(triggerRenderWithCurrentChoice({CityId, City, TTL}))}
                                     className="btn btn-sm btn-outline-secondary" to="/">
                                     <FontAwesomeIcon icon="expand" />
                                 </Link>

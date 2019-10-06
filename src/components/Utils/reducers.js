@@ -27,7 +27,8 @@ export const rootReducer = (state = initialState, action) => {
                                 ...value,
                                 Temperature: action.Temperature,
                                 WeatherText: action.WeatherText,
-                                WeatherIcon: action.WeatherIcon
+                                WeatherIcon: action.WeatherIcon,
+                                TTL: action.TTL
                             }
                         }
                         return value;
@@ -44,7 +45,8 @@ export const rootReducer = (state = initialState, action) => {
                         OriginCountry: action.OriginCountry,
                         Temperature: action.Temperature,
                         WeatherText: action.WeatherText,
-                        WeatherIcon: action.WeatherIcon
+                        WeatherIcon: action.WeatherIcon,
+                        TTL: action.TTL
                     }
                 ]
             };
@@ -66,7 +68,8 @@ export const rootReducer = (state = initialState, action) => {
                 ...state,
                 TTL: action.TTL,
                 currentlyDisplayedCityId: action.CityId,
-                currentlyDisplayedCity: action.City
+                currentlyDisplayedCity: action.City,
+                isFavorite: action.isFavorite
             };
         case 'UPDATE_CURRENT_CITY_CONDITIONS':
             return {
@@ -81,6 +84,27 @@ export const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 currentlyDisplayedDailyForecasts: action.DailyForecasts
+            };
+        case 'SET_IS_FAVORITE_FALSE':
+            return {
+                ...state,
+                isFavorite: false
+            };
+        case 'UPDATE_FAVORITE':
+            return {
+                ...state,
+                favorites: state.favorites.map((value) => {
+                    if (value.CityId === action.CityId) {
+                        return {
+                            ...value,
+                            Temperature: action.Temperature,
+                            WeatherText: action.WeatherText,
+                            WeatherIcon: action.WeatherIcon,
+                            TTL: action.TTL
+                        }
+                    }
+                    return value;
+                })
             };
         default:
             return state || [];

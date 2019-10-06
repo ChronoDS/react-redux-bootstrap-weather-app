@@ -1,3 +1,4 @@
+
 export const images = require.context('../../../public/images', true);
 
 export const pathFromImgId = (weatherImageNumber) => {
