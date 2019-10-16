@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/daniel-shema-24-09-19.iml" filepath="$PROJECT_DIR$/.idea/daniel-shema-24-09-19.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/react-redux-bootstrap-weather-app.iml" filepath="$PROJECT_DIR$/.idea/react-redux-bootstrap-weather-app.iml" />
     </modules>
   </component>
 </project>

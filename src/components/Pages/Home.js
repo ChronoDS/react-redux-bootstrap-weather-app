@@ -9,6 +9,7 @@ import {updateCurrentCityGeneralInfo, updateCurrentCityWeatherInfo} from '../Uti
 
 class Home extends React.Component {
     componentDidMount() {
+        console.log(isWeatherInformationObsolete(Date.now(new Date()), this.props.TTL));
         if(isWeatherInformationObsolete(Date.now(new Date()), this.props.TTL)) {
             requestLocationKey(this.props.city)
                 .then(value => {

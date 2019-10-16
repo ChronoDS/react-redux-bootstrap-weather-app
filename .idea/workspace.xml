@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6693fe55-73b5-4680-829e-bd125f192033" name="Default Changelist" comment="">
+    <list default="true" id="6693fe55-73b5-4680-829e-bd125f192033" name="Default Changelist" comment="added clearer indication if location is already in favorites.">
+      <change beforePath="$PROJECT_DIR$/.idea/daniel-shema-24-09-19.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/react-redux-bootstrap-weather-app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Common/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Common/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Common/Header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Common/Header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Pages/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Pages/Home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Pages/Home.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Pages/Home.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Pages/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Pages/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Pages/Home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Pages/Home.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +39,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/assets/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -108,7 +105,12 @@
       <workItem from="1569571937735" duration="53950000" />
       <workItem from="1569841558633" duration="61165000" />
       <workItem from="1570004249765" duration="94199000" />
-      <workItem from="1570262626335" duration="53141000" />
+      <workItem from="1570262626335" duration="58516000" />
+      <workItem from="1570710486827" duration="134000" />
+      <workItem from="1570710649313" duration="43000" />
+      <workItem from="1570710756158" duration="2300000" />
+      <workItem from="1571056624024" duration="9823000" />
+      <workItem from="1571222443715" duration="1187000" />
     </task>
     <task id="LOCAL‎00001" summary="Added logics, favs and home with next 5 days. also added docs for github pages.">
       <created>1569615664431</created>
@@ -296,7 +298,13 @@
       <option name="presentableId" value="LOCAL‎00031" />
       <updated>1570375791791</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL‎00032" summary="added clearer indication if location is already in favorites.">
+      <created>1570393528768</created>
+      <option name="number" value="LOCAL‎00032" />
+      <option name="presentableId" value="LOCAL‎00032" />
+      <updated>1570393528768</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -317,7 +325,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="add-rem Favorite refactored and is working app-wide. favorites page fully functioning. favoriteItem and header only get props from connected parents, no need for self connectivity by themselves. &#10;key and current locations axios requests works fully. &#10;frequent backup protocol - m2 is fluctuating." />
     <MESSAGE value="added autoComplete search, working app-wide. fully refactored reducer, spread oriented. refactored api requests. frequent backup protocol - m2 is fluctuating." />
     <MESSAGE value="fixed nesting keys access problem, refactored app-wide. frequent backup protocol - m2 is fluctuating." />
     <MESSAGE value="added heroko tunnel for CORS HTTPS bypass. frequent backup protocol - m2 is fluctuating." />
@@ -342,6 +349,7 @@
     <MESSAGE value="fixed some issue regarding route" />
     <MESSAGE value="cleaned the code from residues." />
     <MESSAGE value="simplified favorites weather conditions using store logic." />
-    <option name="LAST_COMMIT_MESSAGE" value="simplified favorites weather conditions using store logic." />
+    <MESSAGE value="added clearer indication if location is already in favorites." />
+    <option name="LAST_COMMIT_MESSAGE" value="added clearer indication if location is already in favorites." />
   </component>
 </project>

@@ -1,8 +1,8 @@
 {
-  "name": "daniel-shema-24-09-19",
-  "version": "0.1.0",
+  "name": "react-redux-bootstrap-weather-app",
+  "version": "0.2.0",
   "private": true,
-  "homepage": "http://chronods.github.io/daniel-shema-24-09-19/",
+  "homepage": "http://chronods.github.io/react-redux-bootstrap-weather-app/",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
     "@fortawesome/free-brands-svg-icons": "^5.11.2",
