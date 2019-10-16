@@ -24,7 +24,7 @@ this app possesses several features including:
 
 ### Live Site
 The Project is deployed using Github Pages at 
-[https://chronods.github.io/daniel-shema-24-09-19/](https://chronods.github.io/daniel-shema-24-09-19/).
+[https://chronods.github.io/react-redux-bootstrap-weather-app/](https://chronods.github.io/react-redux-bootstrap-weather-app/).
 
 
 ###### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
