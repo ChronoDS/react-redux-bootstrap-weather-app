@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/daniel-shema-24-09-19/precache-manifest.542f837e21e957c9111b8cea5bd12af4.js"
+  "/daniel-shema-24-09-19/precache-manifest.d140d69468555c1a4142fec3be70d8e0.js"
 );
 
 self.addEventListener('message', (event) => {
