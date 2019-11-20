@@ -3,7 +3,7 @@ import './Favorites.scss';
 import FavoriteItem from "../Common/FavoriteItem";
 import {connect} from "react-redux";
 import {isWeatherInformationObsolete} from "../Utils/baseUtils";
-import {updateFavorite} from "../Utils/actionCreators";
+import {removeFromFavorites, triggerRenderWithCurrentChoice, updateFavorite} from "../Utils/actionCreators";
 import {requestCurrentConditionsByKey} from "../Utils/apiUtils";
 
 class Favorites extends React.Component {
@@ -33,7 +33,10 @@ class Favorites extends React.Component {
                                     {...location}
                                     isCelsius={this.props.isCelsius}
                                     isLightTheme={this.props.theme}
-                                    key={index}/>
+                                    key={index}
+                                    removeFavorite={() => this.props.dispatch(removeFromFavorites(location.CityId))}
+                                    displayFavorite={() => this.props.dispatch(triggerRenderWithCurrentChoice({...location}))}
+                                />
                             })}
                         </div>
                     </div>

@@ -30,7 +30,9 @@ class NextDays extends React.Component {
                         return <NextDaysItem
                             {...day}
                             isCelsius={this.props.isCelsius}
-                            key={this.props.cityId+index} />
+                            key={this.props.cityId+index}
+                            id={this.props.cityId+index}
+                        />
                     })}
                 </div>
             </div>
