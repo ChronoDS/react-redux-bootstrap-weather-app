@@ -13,7 +13,7 @@
     "bootstrap4-toggle": "^3.6.1",
     "jquery": "^3.4.1",
     "lodash": "latest",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "popper.js": "^1.15.0",
     "prop-types": "latest",
     "react": "^16.12.0",
